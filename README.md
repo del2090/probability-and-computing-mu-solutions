@@ -1,4 +1,4 @@
-# probability-and-computing-mu-solutions
+# Probability and Computing (2nd Edition): Solutions
 
 UNDER CONSTRUCTION
 
