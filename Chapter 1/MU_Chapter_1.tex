@@ -36,7 +36,8 @@ In summary, the desired probability is $251/1024$.
 (d) $\binom{13}{5}/\binom{52}{5}$.\\
 (e) Choose a rank to be triplets and choose another rank to be doublets, then build the triplets and doublets. The desired probability is $(13\times12\times\binom{4}{3}\binom{4}{2})/\binom{52}{5}$.
 \section*{1.4}
-If the loser has won $\textit{k}$ games, then the total number of games played would be $\textit{n}+\textit{k}$, and the winner must have won the last game. Thus, there are $\binom{n+k-1}{k}$ ways to choose games that the loser won.\\
+If the loser has won $\textit{k}$ games, then the total number of games played would be $\textit{n}+\textit{k}$, and the winner must have won the last game.
+Thus, there are $\binom{n+k-1}{k}$ ways to choose games that the loser won.\\
 Let the random variable $X$ be the number of games won by the loser. Then $\Pr(X=k)=\binom{n+k-1}{k}/2^{n+k-1}$ holds.
 \section*{1.5}
 (a) (1,2), (1,4), (1,9), (6,2), (6,4), (6,9), (8,2), (8,4), (8,9)\\
@@ -48,7 +49,8 @@ Alice will win with probability $5/9$.
 \section*{1.6}
 Let the random variable $X_n$ be the number of white balls in the bin for a fixed $n$. The claim that $\Pr(X_n=k)=1/(n-1)$ for all $k$ will be inductively proved.\\
 Base Case: If n=3, $\Pr(X_3 = 1)=\Pr(X_3 = 2)=1/2$.\\
-Inductive Step: Suppose that $\Pr(X_n = k) = 1/(n-1)$. Then for $n+1$, $\Pr(X_{n+1}=1)=(1/2)\times(2/3)\times\cdots\times((n-1)/n)=1/n$, $\Pr(X_{n+1}=n)=(1/2)\times(2/3)\times\cdots\times((n-1)/n)=1/n$ holds. For $2\leq k \leq n-1$, $\Pr(X_{n+1}=k)=\Pr(X_n=k)\times((n-k)/n)+\Pr(X_n=k-1)\times((k-1)/n)=1/n$. $\blacksquare$
+Inductive Step: Suppose that $\Pr(X_n = k) = 1/(n-1)$. Then for $n+1$, $\Pr(X_{n+1}=1)=(1/2)\times(2/3)\times\cdots\times((n-1)/n)=1/n$, $\Pr(X_{n+1}=n)=(1/2)\times(2/3)\times\cdots\times((n-1)/n)=1/n$ holds.
+For $2\leq k \leq n-1$, $\Pr(X_{n+1}=k)=\Pr(X_n=k)\times((n-k)/n)+\Pr(X_n=k-1)\times((k-1)/n)=1/n$. $\blacksquare$
 \section*{1.7}
 (a) Inductive proof.\\
 Base case: $\Pr(E_1 \cup E_2) = \Pr(E_1) + \Pr(E_2) - \Pr(E_1 \cap E_2)$. (by the axioms of probability)\\
@@ -92,8 +94,12 @@ If the vector $\overline{r}$ is chosen uniformly from $\{0,1,\cdots,k-1\}^n$, th
 $\Pr(\textbf{AB}\overline{r}=\textbf{C}\overline{r})\leq 1/k$.\\
 Thus, if the identity test is run p times, then the true positive probability is $1-\frac{1}{k^{p+1}+1}$.
 \section*{1.18}
-First, uniformly choose an integer $x$ from $\{0,\cdots,n-1\}$. Then evaluate $F(z)$ as $F(z)=F((z-x)+x)=(F(z-x)+F(x))\mod{m}$. At the lookup table, each value $F(z-x)$ and $F(x)$ will be of the correct value with probability $4/5$. Considering that we take modulo $m$, the output will be equal to $F(z)$ with probability at least $(4/5)^2=16/25$.\\
-If the algorithm is repeated three times, then it is possible to take the majority if it exists, or otherwise simply take the first output. For the algorithm to fail, at least two of the three outputs need to be wrong, and that occurs with probability less than $\binom{3}{2}\times(\frac{9}{25})^2\times\frac{16}{25}+\binom{3}{3}\times(\frac{9}{25})^3\approx0.295$. Thus, the final output is correct with probability at least $0.705$.
+First, uniformly choose an integer $x$ from $\{0,\cdots,n-1\}$. Then evaluate $F(z)$ as $F(z)=F((z-x)+x)=(F(z-x)+F(x))\mod{m}$.
+At the lookup table, each value $F(z-x)$ and $F(x)$ will be of the correct value with probability $4/5$.
+Considering that we take modulo $m$, the output will be equal to $F(z)$ with probability at least $(4/5)^2=16/25$.\\
+If the algorithm is repeated three times, then it is possible to take the majority if it exists, or otherwise simply take the first output.
+For the algorithm to fail, at least two of the three outputs need to be wrong, and that occurs with probability less than $\binom{3}{2}\times(\frac{9}{25})^2\times\frac{16}{25}+\binom{3}{3}\times(\frac{9}{25})^3\approx0.295$.
+Thus, the final output is correct with probability at least $0.705$.
 \section*{1.19}
 Let $A$ be the event that the sum of two dice rolls is $2$, and let $B$ be the event that the first roll is $2$. Then $0=\Pr(A|B)<\Pr(A)=1/36$.\\
 Let $A$ be the event that a roll of a blue die is $1$, and let $B$ be the event that a roll of a red die is $1$. Then $\Pr(A|B)=\Pr(A)=1/36$.\\
@@ -107,11 +113,14 @@ $=\prod\limits_{i\in I}(1-\Pr(E_i))=\prod\limits_{i\in I}\Pr(\overline{E_i})$. $
 \section*{1.21}
 Suppose that a fair four-sided die is rolled. Let $X=\{1,2\}$, $y=\{1,3\}$,$Z=\{1,4\}$. Then the events are pairwise independent but not mutually independent ($1/4=\Pr(X\cap Y\cap Z) \neq \Pr(X)\Pr(Y)\Pr(Z)=1/8$.
 \section*{1.22}
-(a) For any $X \subset \{1,\cdots,n\}$, each element in $X$ is chosen with probability $1/2$, and each element not in $X$ is dropped with probability $1/2$. Thus, the probability of $X$ to be generated is $1/2^{|X|}\times1/2^{n-|X|}=1/2^n$. As there are $2^n$ possible subsets, $X$ is equally likely to be any one of the possible subsets.\\
+(a) For any $X \subset \{1,\cdots,n\}$, each element in $X$ is chosen with probability $1/2$, and each element not in $X$ is dropped with probability $1/2$.
+Thus, the probability of $X$ to be generated is $1/2^{|X|}\times1/2^{n-|X|}=1/2^n$.
+As there are $2^n$ possible subsets, $X$ is equally likely to be any one of the possible subsets.\\
 (b) For $X\subseteq Y$, each element in $X$ must be in $Y$, which happens with probability $3/4$. Thus, $\Pr(X\subseteq Y)=(3/4)^n$.\\
 For $X\cup Y = \{1,\cdots,n\}$, each element in $\{1,\cdots,n\}$ must be in at least one of two sets $X$ and $Y$, which happens with probability $3/4$. Thus, $\Pr(X\cup Y = \{1,\cdots,n\})=(3/4)^n$.
 \section*{1.23}
-After executing the randomized min-cut algorithm, there can be at most $\binom{n}{2}$ edges between the two vertices in the reduced graph, as $n$ vertices are assumed. As each edge is a candidate for min-cut sets, there can be at most $\binom{n}{2}=\frac{n(n-1)}{2}$ distinct min-cut sets.
+After executing the randomized min-cut algorithm, there can be at most $\binom{n}{2}$ edges between the two vertices in the reduced graph, as $n$ vertices are assumed.
+As each edge is a candidate for min-cut sets, there can be at most $\binom{n}{2}=\frac{n(n-1)}{2}$ distinct min-cut sets.
 \section*{1.24}
 \section*{1.25}
 \end{document}
