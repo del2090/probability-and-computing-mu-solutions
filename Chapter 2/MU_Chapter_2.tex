@@ -34,5 +34,8 @@ As is known, $\sum\limits_{i=0,2,\cdots}\binom{n}{i}=2^{n-1}$, so $\Pr(Y)={\frac
 (a) $\sum\limits_{k=1}^\infty p(1-p)^{k-1}q(1-q)^{k-1}=pq\cdot\frac{1}{1-(1-p)(1-q)}=\frac{pq}{p+q-pq}$.\\
 (b) $\textbf{E}[\max (X,Y)]=\sum\limits_{k=1}^\infty \Pr(X\geq k$ or $Y \geq k)=\sum\limits_{k=1}^\infty(1-\Pr(X<k,Y<k))=\sum\limits_{k=1}^\infty(1-(1-(1-p)^{k-1})(1-(1-q)^{k-1}))$\\
 $=\sum\limits_{k=1}^\infty((1-p)^{k-1}+(1-q)^{k-1}-(1-p)^{k-1}(1-q)^{k-1})=\frac{1}{p}+\frac{1}{q}-\frac{1}{p+q-pq}$.\\
-(c)
+(c) $\Pr(\min(X,Y)=k)=\Pr(X=k)\Pr(Y\geq k)+\Pr(Y=k)\Pr(X\geq k)-\Pr(X=Y=k)=(1-p)^{k-1}(1-q)^{k-1}(p+q-pq)$.\\
+(d) $\textbf{E}[X|X\leq Y]=\textbf{E}[\min(X,Y)]=1/(p+q-pq)$, since $\min(X,Y)\sim Geom(p+q-pq)$ from the previous problem.
+\section*{2.8}
+(a) 
 \end{document}
