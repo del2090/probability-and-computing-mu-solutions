@@ -93,4 +93,18 @@ Note that the desired probability is upper-bounded by the probability that all d
 $(1-(\frac{1}{2})^{\delta-1})^{\lfloor n/\delta \rfloor}\leq(1-(\frac{1}{2})^{\log_2n-2\log_2\log_2n})^{\lfloor n/\delta \rfloor}=(1-\frac{(\log_2n)^2}{n})^{\lfloor n/\delta \rfloor}$\\
 $\leq(1-\frac{(\log_2n)^2}{n})^{n/\log_2n}\leq e^{-\log_2n}=n^{-\log_2e}\leq n^{-1}$ ($1-x\leq e^{-x}$). $\blacksquare$
 \section*{2.17}
+$\textbf{E}[Y_0]=1$, $\textbf{E}[Y_1]=2p$ obviously holds. Now, we have $\textbf{E}[Y_i|Y_{i-1}=j]=2pj$ for $i\geq 1$.
+Then, by the definition of conditional expectation, $\textbf{E}[Y_i]=\textbf{E}[\textbf{E}[Y_i|Y_{i-1}]]=\sum_j2pj\Pr(Y_{i-1}=j)=2p\textbf{E}[Y_{i-1}]$.
+Thus, $\textbf{E}[Y_i]=(2p)^i$, and the expected total number of copies $\textbf{E}[\sum\limits_{i=0}^\infty Y_i]$ is bounded if $p<1/2$.
+\section*{2.18}
+Inductive proof.\\
+Base case: It is obvious on $n=1$.\\
+Inductive step: Suppose that $\Pr(X_k=i)=1/k$ for all $i$ where $X_k$ is the item stored after the $k$th item appeared.\\
+Then, $\Pr(X_{k+1}=i)=\Pr(X_k=i)\times(1-\frac{1}{k+1})=\frac{1}{k+1}$ for all $1\leq i \leq k$, and obviously $\Pr(X_{k+1}=k+1)=\frac{1}{k+1}$ which is the probability of replacement. $\blacksquare$
+\section*{2.19}
+Let $X_k$ be the item stored after the $k$th item appeared. Since $k=1$ is obvious, we will solve for $k\geq 2$.
+Then $\Pr(X_k=i)=(\frac{1}{2})^{k+1-i}$ for all $2\leq i\leq k$ and $\Pr(X_k=1)=\Pr(X_k=2)$.
+\section*{2.20}
+Let $X_i$ be an indicator variable that is $1$ if $\pi(i)=i$.
+Then the expected number of fixed points would be $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{E}[X_i]=n\times\frac{1}{n}$.
 \end{document}
