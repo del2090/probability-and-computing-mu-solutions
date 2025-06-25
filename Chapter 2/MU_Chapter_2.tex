@@ -59,4 +59,23 @@ Therefore, $f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq\sum\limits_{i=1}^{k+1}\la
 Then, since $\sum_i\Pr(X=x_i)=1$, $f(\sum\limits_{i=1}^n\Pr(X=x_i)x_i)\leq\sum\limits_{i=1}^n\Pr(X=x_i)f(x_i)$ holds from the previous problem.
 This is equivalent to $f(\textbf{E}[X])\leq\textbf{E}[f(X)]$.
 \section*{2.11}
+Inductive proof.\\
+Base case: It is obvious on $n=1$.\\
+When $n=2$, $\textbf{E}[X_1+X_2|Y=y]=\sum\limits_i\sum\limits_j(i+j)\Pr(X_1=i,X_2=j|Y=y)$\\
+$=\sum\limits_i\sum\limits_ji\Pr(X_1=i,X_2=j|Y=y)+\sum\limits_i\sum\limits_jj\Pr(X_1=i,X_2=j|Y=y)$.\\
+Now, by the law of total probability, above equation is equivalent to\\
+$\sum\limits_i i\Pr(X_1=i|Y=y)+\sum\limits_j j\Pr(X_2=j|Y=y)=\textbf{E}[X_1|Y=y]+\textbf{E}[X_2|Y=y]$.\\
+Inductive step: Suppose that the claim holds for $n=k$. Then,\\
+$\textbf{E}[\sum\limits_{i=1}^{k+1}X_i|Y=y]=\textbf{E}[X_{k+1}|Y=y]+\textbf{E}[\sum\limits_{i=1}^kX_i|Y=y]=\sum\limits_{i=1}^{k+1}\textbf{E}[X_i|Y=y]$. $\blacksquare$
+\section*{2.12}
+The expected number of cards to draw to see all $n$ cards is equivalent to the coupon collector's problem in the textbook.
+Let $X_i$ be the number of draws to perform to observe the $i$th card.
+Then $X_i\sim Geom(1-\frac{i-1}{n})$ holds, deriving $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{E}[X_i]=\sum\limits_{i=1}^n\frac{n}{n-i+1}=\sum\limits_{i=1}^n\frac{n}{i}$.\\
+Let $Y_i$ be the indicator variable that is $1$ if $i$th card was not chosen within $2n$ draws.
+Then the expected number of unchosen cards would be $\sum\limits_{i=1}^n\textbf{E}[Y_i]=n(\frac{n-1}{n})^{2n}$.\\
+Using the same idea, the expected number of cards chosen only once would be $n\times\binom{2n}{1}\frac{1}{n}(\frac{n-1}{n})^{2n-1}$.
+\section{2.13}
+(a) The problem is equivalent to the coupon collector's problem, since the probability of observing the $i$th coupon stays as $1-\frac{2i-2}{2n}=1-\frac{i-1}{n}$.\\
+(b) For any positive integer $k$, the result is equivalent. The probability of observing the $i$th coupon is $1-\frac{ki-k}{kn}=1-\frac{i-1}{n}$.
+\section{2.14}
 \end{document}
