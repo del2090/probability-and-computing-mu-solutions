@@ -3,7 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-\title{M$\&$U(2nd Edition) Chapter 2 Solutions}
+\title {Probability and Computing, 2nd Edition \\[2ex] \large Chapter 2 Solutions}
 \author{Hahndeul Kim}
 \date{January 2025}
 
@@ -34,7 +34,7 @@ As is known, $\sum\limits_{i=0,2,\cdots}\binom{n}{i}=2^{n-1}$, so $\Pr(Y)={\frac
 (a) $\sum\limits_{k=1}^\infty p(1-p)^{k-1}q(1-q)^{k-1}=pq\cdot\frac{1}{1-(1-p)(1-q)}=\frac{pq}{p+q-pq}$.\\
 (b) $\textbf{E}[\max (X,Y)]=\sum\limits_{k=1}^\infty \Pr(X\geq k$ or $Y \geq k)=\sum\limits_{k=1}^\infty(1-\Pr(X<k,Y<k))=\sum\limits_{k=1}^\infty(1-(1-(1-p)^{k-1})(1-(1-q)^{k-1}))$\\
 $=\sum\limits_{k=1}^\infty((1-p)^{k-1}+(1-q)^{k-1}-(1-p)^{k-1}(1-q)^{k-1})=\frac{1}{p}+\frac{1}{q}-\frac{1}{p+q-pq}$.\\
-(c) $\Pr(\min(X,Y)=k)=\Pr(X=k)\Pr(Y\geq k)+\Pr(Y=k)\Pr(X\geq k)-\Pr(X=Y=k)=(1-p)^{k-1}(1-q)^{k-1}(p+q-pq)$.\\
+(c) $\Pr(\min(X,Y)=k)=\Pr(X=k)\Pr(Y\geq k)+\Pr(Y=k)\Pr(X\geq k)-\Pr(X=Y=k)=(1-p)^{k-1}(1-q)^{k-1}(p+q-pq)=(1-(p+q-pq))^{k-1}(p+q-pq)$.\\
 (d) $\textbf{E}[X|X\leq Y]=\textbf{E}[\min(X,Y)]=1/(p+q-pq)$, since $\min(X,Y)\sim Geom(p+q-pq)$ from the previous problem.
 \section*{2.8}
 (a) Expected number of girls: $\textbf{E}[G]=1\times\sum\limits_{i=1}^k(\frac{1}{2})^i=1-2^{-k}$.\\
@@ -48,7 +48,7 @@ $\textbf{E}[\min(X_1,X_2)]=\sum\limits_{i=1}^k\frac{(k+1-i)^2-(k-i)^2}{k^2}\time
 Since $\{\max(X_1,X_2),\min(X_1,X_2)\}=\{X_1,X_2\}$, $\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]=\textbf{E}[X_1+X_2]=\textbf{E}[X_1]+\textbf{E}[X_2]$ holds, again by the linearity of expectations.
 Thus, the claim in the previous problem must be true.
 \section*{2.10}
-(a) Base case: when $n=1,2$, it is obvious from the definition of convexity.\\
+(a) Base case: when $n=1,2$, it is trivial from the definition of convexity.\\
 Inductive step: Suppose that the claim holds for $n=k$.
 Now, let $\sum\limits_{i=1}^{k+1}\lambda_i=1$ and $x_1,...,x_{k+1}\in \mathbb{R}$.
 Then, by the definition of convexity,\\
@@ -60,7 +60,7 @@ Then, since $\sum_i\Pr(X=x_i)=1$, $f(\sum\limits_{i=1}^n\Pr(X=x_i)x_i)\leq\sum\l
 This is equivalent to $f(\textbf{E}[X])\leq\textbf{E}[f(X)]$.
 \section*{2.11}
 Inductive proof.\\
-Base case: It is obvious on $n=1$.\\
+Base case: It is trivial on $n=1$.\\
 When $n=2$, $\textbf{E}[X_1+X_2|Y=y]=\sum\limits_i\sum\limits_j(i+j)\Pr(X_1=i,X_2=j|Y=y)$\\
 $=\sum\limits_i\sum\limits_ji\Pr(X_1=i,X_2=j|Y=y)+\sum\limits_i\sum\limits_jj\Pr(X_1=i,X_2=j|Y=y)$.\\
 Now, by the law of total probability, above equation is equivalent to\\
@@ -98,13 +98,15 @@ Then, by the definition of conditional expectation, $\textbf{E}[Y_i]=\textbf{E}[
 Thus, $\textbf{E}[Y_i]=(2p)^i$, and the expected total number of copies $\textbf{E}[\sum\limits_{i=0}^\infty Y_i]$ is bounded if $p<1/2$.
 \section*{2.18}
 Inductive proof.\\
-Base case: It is obvious on $n=1$.\\
+Base case: It is trivial on $n=1$.\\
 Inductive step: Suppose that $\Pr(X_k=i)=1/k$ for all $i$ where $X_k$ is the item stored after the $k$th item appeared.\\
 Then, $\Pr(X_{k+1}=i)=\Pr(X_k=i)\times(1-\frac{1}{k+1})=\frac{1}{k+1}$ for all $1\leq i \leq k$, and obviously $\Pr(X_{k+1}=k+1)=\frac{1}{k+1}$ which is the probability of replacement. $\blacksquare$
 \section*{2.19}
-Let $X_k$ be the item stored after the $k$th item appeared. Since $k=1$ is obvious, we will solve for $k\geq 2$.
+Let $X_k$ be the item stored after the $k$th item appeared. Since $k=1$ is trivial, we will solve for $k\geq 2$.
 Then $\Pr(X_k=i)=(\frac{1}{2})^{k+1-i}$ for all $2\leq i\leq k$ and $\Pr(X_k=1)=\Pr(X_k=2)$.
 \section*{2.20}
 Let $X_i$ be an indicator variable that is $1$ if $\pi(i)=i$.
 Then the expected number of fixed points would be $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{E}[X_i]=n\times\frac{1}{n}$.
+\section*{2.21}
+
 \end{document}
