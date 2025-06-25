@@ -74,8 +74,23 @@ Then $X_i\sim Geom(1-\frac{i-1}{n})$ holds, deriving $\textbf{E}[\sum\limits_{i=
 Let $Y_i$ be the indicator variable that is $1$ if $i$th card was not chosen within $2n$ draws.
 Then the expected number of unchosen cards would be $\sum\limits_{i=1}^n\textbf{E}[Y_i]=n(\frac{n-1}{n})^{2n}$.\\
 Using the same idea, the expected number of cards chosen only once would be $n\times\binom{2n}{1}\frac{1}{n}(\frac{n-1}{n})^{2n-1}$.
-\section{2.13}
+\section*{2.13}
 (a) The problem is equivalent to the coupon collector's problem, since the probability of observing the $i$th coupon stays as $1-\frac{2i-2}{2n}=1-\frac{i-1}{n}$.\\
 (b) For any positive integer $k$, the result is equivalent. The probability of observing the $i$th coupon is $1-\frac{ki-k}{kn}=1-\frac{i-1}{n}$.
-\section{2.14}
+\section*{2.14}
+The $n$th flip must be head. Taking this into account, there would be $\binom{n-1}{k-1}$ ways to assign the ordering of $k-1$ heads and $n-k$ tails.\\
+Therefore, $\Pr(X=n)=\binom{n-1}{k-1}p^k(1-p)^{n-k}$.
+\section*{2.15}
+Since it is inefficient to algebraically compute the expectation of a negative binomial distribution,
+simply introduce $X_1,...,X_k$ where $X_i$ denotes the number of flips performed after $(i-1)$th head until $i$th head.
+Then, $\textbf{E}[\sum\limits_{i=1}^kX_i]=\sum\limits_{i=1}^k\textbf{E}[X_i]=k/p$.
+\section*{2.16}
+(a) Take $n=2^k$, and let $X_i$ be an indicator variable that is $1$ if a streak of length $\log_2n+1=k+1$ occurred starting from the $i$th flip.\\
+Then $\textbf{E}[\sum\limits_{i=1}^{n-k}X_i]=\sum\limits_{i=1}^{n-k}\textbf{E}[X_i]=(n-k)(\frac{1}{2})^k=1-\frac{\log_2n}{n}$ holds.\\
+Now, $1-\frac{\log_2n}{n}$ is $1-o(1)$ since $\lim\limits_{n\rightarrow\infty}\frac{\log_2n}{n}=0$.\\
+(b) Let $\lfloor \log_2 n - 2\log_2\log_2 n \rfloor=\delta$.
+Note that the desired probability is upper-bounded by the probability that all disjoint $\delta$ blocks are not a streak, which is $(1-(\frac{1}{2})^{\delta-1})^{\lfloor n/\delta \rfloor}$.\\
+$(1-(\frac{1}{2})^{\delta-1})^{\lfloor n/\delta \rfloor}\leq(1-(\frac{1}{2})^{\log_2n-2\log_2\log_2n})^{\lfloor n/\delta \rfloor}=(1-\frac{(\log_2n)^2}{n})^{\lfloor n/\delta \rfloor}$\\
+$\leq(1-\frac{(\log_2n)^2}{n})^{n/\log_2n}\leq e^{-\log_2n}=n^{-\log_2e}\leq n^{-1}$ ($1-x\leq e^{-x}$). $\blacksquare$
+\section*{2.17}
 \end{document}
