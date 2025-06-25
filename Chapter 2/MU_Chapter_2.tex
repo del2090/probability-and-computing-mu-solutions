@@ -14,8 +14,7 @@
 \section*{2.1}
 $\textbf{E}[X]=\left(\sum\limits_{i=1}^ki\right)/k=(k+1)/2$.
 \section*{2.2}
-The probability to type "proof" is $1/26^5$.
-As there are $1,000,000-5+1=999,996$ positions to start the word "proof", the desired probability would be $999996/26^5$ by the linearity of expectations.
+The probability to type "proof" is $1/26^5$. As there are $1,000,000-5+1=999,996$ positions to start the word "proof", the desired probability would be $999996/26^5$ by the linearity of expectations.
 \section*{2.3}
 Take $f$ as $f(x)=-x^2$ and $X$ as a random variable with $\Pr(X=1)=\Pr(X=2)=1/2$. Then, $-5/2=\textbf{E}[f(X)]<f(\textbf{E}[X])=-9/4$.\\
 Take $f$ as $f(x)=x$ and $X$ as above. Then, $\textbf{E}[f(X)]=f(\textbf{E}[X])=3/2$.\\
@@ -40,13 +39,24 @@ $=\sum\limits_{k=1}^\infty((1-p)^{k-1}+(1-q)^{k-1}-(1-p)^{k-1}(1-q)^{k-1})=\frac
 \section*{2.8}
 (a) Expected number of girls: $\textbf{E}[G]=1\times\sum\limits_{i=1}^k(\frac{1}{2})^i=1-2^{-k}$.\\
 Expected number of boys: $\textbf{E}[B]=(\frac{1}{2})^k\times k+\sum\limits_{i=1}^k(\frac{1}{2})^i\times(i-1)=\frac{2^k-1}{2^k}$.\\
-(b) The number of total children now follows $Geom(1/2)$. Thus, $\textbf{E}[G+B]=2$ holds.
-Since $\textbf{E}[G]=\lim\limits_{k\rightarrow \infty}\frac{2^k-1}{2^k}=1$ holds using the result of the previous problem, $\textbf{E}[B]=1$.
+(b) The number of total children now follows $Geom(1/2)$. Thus, $\textbf{E}[G+B]=2$ holds. Since $\textbf{E}[G]=\lim\limits_{k\rightarrow \infty}\frac{2^k-1}{2^k}=1$ holds using the result of the previous problem, $\textbf{E}[B]=1$.
 \section*{2.9}
 (a) $\textbf{E}[\max(X_1,X_2)]=\sum\limits_{i=1}^k\frac{i^2-(i-1)^2}{k^2}\times i=\frac{4k^2+3k-1}{6k}$.\\
 $\textbf{E}[\min(X_1,X_2)]=\sum\limits_{i=1}^k\frac{(k+1-i)^2-(k-i)^2}{k^2}\times i=\frac{2k^2+3k+1}{6k}$.\\
 (b) Since two dice are independent, $\textbf{E}[X_1]=\textbf{E}[X_2]=\frac{k+1}{2}$. Therefore, the claim holds.\\
 (c) By the linearity of expectations, $\textbf{E}[\max(X_1,X_2)]+\textbf{E}[\min(X_1,X_2)]=\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]$ holds.
 Since $\{\max(X_1,X_2),\min(X_1,X_2)\}=\{X_1,X_2\}$, $\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]=\textbf{E}[X_1+X_2]=\textbf{E}[X_1]+\textbf{E}[X_2]$ holds, again by the linearity of expectations.
-Thus, the claim in the previous problem holds.
+Thus, the claim in the previous problem must be true.
+\section*{2.10}
+(a) Base case: when $n=1,2$, it is obvious from the definition of convexity.\\
+Inductive step: Suppose that the claim holds for $n=k$.
+Now, let $\sum\limits_{i=1}^{k+1}\lambda_i=1$ and $x_1,...,x_{k+1}\in \mathbb{R}$.
+Then, by the definition of convexity,\\
+$f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq(1-\lambda_{k+1})f(\frac{1}{1-\lambda_{k+1}}(\sum\limits_{i=1}^k\lambda_ix_i))+\lambda_{k+1}f(x_{k+1})$ holds.
+Now, from the inductive hypothesis, $(1-\lambda_{k+1})f(\frac{1}{1-\lambda_{k+1}}(\sum\limits_{i=1}^k\lambda_ix_i))\leq(1-\lambda_{k+1})\sum\limits_{i=1}^k\frac{\lambda_i}{1-\lambda_{k+1}}f(x_i)=\sum\limits_{i=1}^{k}\lambda_if(x_i)$ holds.
+Therefore, $f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq\sum\limits_{i=1}^{k+1}\lambda_if(x_i)$. $\blacksquare$\\
+(b) If $X$ takes on only finitely many values, we can denote the set of possible values as $\{x_1,...,x_n\}$.
+Then, since $\sum_i\Pr(X=x_i)=1$, $f(\sum\limits_{i=1}^n\Pr(X=x_i)x_i)\leq\sum\limits_{i=1}^n\Pr(X=x_i)f(x_i)$ holds from the previous problem.
+This is equivalent to $f(\textbf{E}[X])\leq\textbf{E}[f(X)]$.
+\section*{2.11}
 \end{document}
