@@ -135,7 +135,13 @@ Let $X_i$ be the number of $i$-cycles in the graph. Then, the expected number of
 $\textbf{E}[X_i]=\binom{n}{i}\frac{(k-1)!}{n(n-1)\cdots(n-k+1)}=\frac{n!}{(n-i)!i!}\frac{(i-1)!(n-i)!}{n!}=\frac{1}{i}$ holds.
 Thus, $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\frac{1}{i}=H(n)$ ($\textit{harnomic number}$).
 \section*{2.27}
-$\textbf{E}[X]=\sum\limits_{i=1}^\infty x\Pr(X=x)=\sum\limits_{i=1}^\infty(6/\pi^2)x^{-1}=\infty$.
+$\textbf{E}[X]=\sum\limits_{i=1}^\infty x\Pr(X=x)=\sum\limits_{i=1}^\infty(6/\pi^2)x^{-1}=\infty$,
+which follows from the well-known divergence of harmonic series.
 \section*{2.28}
+If the player won at the $k$th spin for the first time, the total money lost is $(1+2+\cdots+2^{k-2})$, and earned money is $2^{k-1}$.
+Since $(1+2+\cdots+2^{k-2})=2^{k-1}-1$, the player eventually wins a dollar.\\
+$\textbf{E}[X]=\sum\limits_{i=1}^\infty(\frac{1}{2})^i(2^{i-1}-1)=\sum\limits_{i=1}^\infty(\frac{1}{2}-(\frac{1}{2})^i)=\infty$.
+This implies that this strategy is impractical and would lead to bankruptcy, since the player has a finite amount of money.
+\section*{2.29}
 
 \end{document}
