@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title {Probability and Computing, 2nd Edition \\[2ex] \large Chapter 2 Solutions}
+\author{Hahndeul Kim}
+\date{January 2025}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{2.1}
+$\textbf{E}[X]=\left(\sum\limits_{i=1}^ki\right)/k=(k+1)/2$.
+\section*{2.2}
+The probability to type "proof" is $1/26^5$. As there are $1,000,000-5+1=999,996$ positions to start the word "proof", the desired probability would be $999996/26^5$ by the linearity of expectations.
+\section*{2.3}
+Take $f$ as $f(x)=-x^2$ and $X$ as a random variable with $\Pr(X=1)=\Pr(X=2)=1/2$. Then, $-5/2=\textbf{E}[f(X)]<f(\textbf{E}[X])=-9/4$.\\
+Take $f$ as $f(x)=x$ and $X$ as above. Then, $\textbf{E}[f(X)]=f(\textbf{E}[X])=3/2$.\\
+Take $f$ as $f(x)=x^2$ and $X$ as above. Then, $9/4=f(\textbf{E}[X])<\textbf{E}[f(X)]=5/2$.
+\section*{2.4}
+Take $f(x)=x^k$, which is convex when $k$ is an positive even integer.
+Then by Jensen's inequality, $\textbf{E}[f(X)] \geq f(\textbf{E}[X])$ holds.
+\section*{2.5}
+Let the event that $X$ is even be $Y$. Then $\Pr(Y)=\sum\limits_{i=0,2,\cdots}\binom{n}{i}(\frac{1}{2})^n$ holds.\
+As is known, $\sum\limits_{i=0,2,\cdots}\binom{n}{i}=2^{n-1}$, so $\Pr(Y)={\frac{1}{2}}$ is valid.
+\section*{2.6}
+(a) $X_1$ can be $2$, $4$ or $6$. Therefore $\textbf{E}[X|X_1$ is even$] = (3+4+\cdots+8)\times \frac{1}{18}+(5+6+\cdots+10)\times \frac{1}{18}+(7+8+\cdots+12)\times \frac{1}{18}=\frac{15}{2}$.\\
+(b) $\textbf{E}[X|X_1 = X_2]=(2+4+6+8+10+12)\times\frac{1}{6}=7$.\\
+(c) $\textbf{E}[X_1|X=9]=(3+4+5+6)\times\frac{1}{4}=\frac{9}{2}$.\\
+(d) $\textbf{E}[X_1 - X_2|X=k]=0$, since $X_1$ and $X_2$ are independent dice rolls.
+\section*{2.7}
+(a) $\sum\limits_{k=1}^\infty p(1-p)^{k-1}q(1-q)^{k-1}=pq\cdot\frac{1}{1-(1-p)(1-q)}=\frac{pq}{p+q-pq}$.\\
+(b) $\textbf{E}[\max (X,Y)]=\sum\limits_{k=1}^\infty \Pr(X\geq k$ or $Y \geq k)=\sum\limits_{k=1}^\infty(1-\Pr(X<k,Y<k))=\sum\limits_{k=1}^\infty(1-(1-(1-p)^{k-1})(1-(1-q)^{k-1}))$\\
+$=\sum\limits_{k=1}^\infty((1-p)^{k-1}+(1-q)^{k-1}-(1-p)^{k-1}(1-q)^{k-1})=\frac{1}{p}+\frac{1}{q}-\frac{1}{p+q-pq}$.\\
+(c) $\Pr(\min(X,Y)=k)=\Pr(X=k)\Pr(Y\geq k)+\Pr(Y=k)\Pr(X\geq k)-\Pr(X=Y=k)=(1-p)^{k-1}(1-q)^{k-1}(p+q-pq)=(1-(p+q-pq))^{k-1}(p+q-pq)$.\\
+(d) $\textbf{E}[X|X\leq Y]=\textbf{E}[\min(X,Y)]=1/(p+q-pq)$, since $\min(X,Y)\sim Geom(p+q-pq)$ from the previous problem.
+\section*{2.8}
+(a) Expected number of girls: $\textbf{E}[G]=1\times\sum\limits_{i=1}^k(\frac{1}{2})^i=1-2^{-k}$.\\
+Expected number of boys: $\textbf{E}[B]=(\frac{1}{2})^k\times k+\sum\limits_{i=1}^k(\frac{1}{2})^i\times(i-1)=\frac{2^k-1}{2^k}$.\\
+(b) The number of total children now follows $Geom(1/2)$. Thus, $\textbf{E}[G+B]=2$ holds. Since $\textbf{E}[G]=\lim\limits_{k\rightarrow \infty}\frac{2^k-1}{2^k}=1$ holds using the result of the previous problem, $\textbf{E}[B]=1$.
+\section*{2.9}
+(a) $\textbf{E}[\max(X_1,X_2)]=\sum\limits_{i=1}^k\frac{i^2-(i-1)^2}{k^2}\times i=\frac{4k^2+3k-1}{6k}$.\\
+$\textbf{E}[\min(X_1,X_2)]=\sum\limits_{i=1}^k\frac{(k+1-i)^2-(k-i)^2}{k^2}\times i=\frac{2k^2+3k+1}{6k}$.\\
+(b) Since two dice are independent, $\textbf{E}[X_1]=\textbf{E}[X_2]=\frac{k+1}{2}$. Therefore, the claim holds.\\
+(c) By the linearity of expectations, $\textbf{E}[\max(X_1,X_2)]+\textbf{E}[\min(X_1,X_2)]=\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]$ holds.
+Since $\{\max(X_1,X_2),\min(X_1,X_2)\}=\{X_1,X_2\}$, $\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]=\textbf{E}[X_1+X_2]=\textbf{E}[X_1]+\textbf{E}[X_2]$ holds, again by the linearity of expectations.
+Thus, the claim in the previous problem must be true.
+\section*{2.10}
+(a) Base case: when $n=1,2$, it is trivial from the definition of convexity.\\
+Inductive step: Suppose that the claim holds for $n=k$.
+Now, let $\sum\limits_{i=1}^{k+1}\lambda_i=1$ and $x_1,...,x_{k+1}\in \mathbb{R}$.
+Then, by the definition of convexity,\\
+$f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq(1-\lambda_{k+1})f(\frac{1}{1-\lambda_{k+1}}(\sum\limits_{i=1}^k\lambda_ix_i))+\lambda_{k+1}f(x_{k+1})$ holds.
+Now, from the inductive hypothesis, $(1-\lambda_{k+1})f(\frac{1}{1-\lambda_{k+1}}(\sum\limits_{i=1}^k\lambda_ix_i))\leq(1-\lambda_{k+1})\sum\limits_{i=1}^k\frac{\lambda_i}{1-\lambda_{k+1}}f(x_i)=\sum\limits_{i=1}^{k}\lambda_if(x_i)$ holds.
+Therefore, $f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq\sum\limits_{i=1}^{k+1}\lambda_if(x_i)$. $\blacksquare$\\
+(b) If $X$ takes on only finitely many values, we can denote the set of possible values as $\{x_1,...,x_n\}$.
+Then, since $\sum_i\Pr(X=x_i)=1$, $f(\sum\limits_{i=1}^n\Pr(X=x_i)x_i)\leq\sum\limits_{i=1}^n\Pr(X=x_i)f(x_i)$ holds from the previous problem.
+This is equivalent to $f(\textbf{E}[X])\leq\textbf{E}[f(X)]$.
+\section*{2.11}
+Inductive proof.\\
+Base case: It is trivial on $n=1$.\\
+When $n=2$, $\textbf{E}[X_1+X_2|Y=y]=\sum\limits_i\sum\limits_j(i+j)\Pr(X_1=i,X_2=j|Y=y)$\\
+$=\sum\limits_i\sum\limits_ji\Pr(X_1=i,X_2=j|Y=y)+\sum\limits_i\sum\limits_jj\Pr(X_1=i,X_2=j|Y=y)$.\\
+Now, by the law of total probability, above equation is equivalent to\\
+$\sum\limits_i i\Pr(X_1=i|Y=y)+\sum\limits_j j\Pr(X_2=j|Y=y)=\textbf{E}[X_1|Y=y]+\textbf{E}[X_2|Y=y]$.\\
+Inductive step: Suppose that the claim holds for $n=k$. Then,\\
+$\textbf{E}[\sum\limits_{i=1}^{k+1}X_i|Y=y]=\textbf{E}[X_{k+1}|Y=y]+\textbf{E}[\sum\limits_{i=1}^kX_i|Y=y]=\sum\limits_{i=1}^{k+1}\textbf{E}[X_i|Y=y]$. $\blacksquare$
+\section*{2.12}
+The expected number of cards to draw to see all $n$ cards is equivalent to the coupon collector's problem in the textbook.
+Let $X_i$ be the number of draws to perform to observe the $i$th card.
+Then $X_i\sim Geom(1-\frac{i-1}{n})$ holds, deriving $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{E}[X_i]=\sum\limits_{i=1}^n\frac{n}{n-i+1}=\sum\limits_{i=1}^n\frac{n}{i}$.\\
+Let $Y_i$ be the indicator variable that is $1$ if $i$th card was not chosen within $2n$ draws.
+Then the expected number of unchosen cards would be $\sum\limits_{i=1}^n\textbf{E}[Y_i]=n(\frac{n-1}{n})^{2n}$.\\
+Using the same idea, the expected number of cards chosen only once would be $n\times\binom{2n}{1}\frac{1}{n}(\frac{n-1}{n})^{2n-1}$.
+\section*{2.13}
+(a) The problem is equivalent to the coupon collector's problem, since the probability of observing the $i$th coupon stays as $1-\frac{2i-2}{2n}=1-\frac{i-1}{n}$.\\
+(b) For any positive integer $k$, the result is equivalent. The probability of observing the $i$th coupon is $1-\frac{ki-k}{kn}=1-\frac{i-1}{n}$.
+\section*{2.14}
+The $n$th flip must be head. Taking this into account, there would be $\binom{n-1}{k-1}$ ways to assign the ordering of $k-1$ heads and $n-k$ tails.\\
+Therefore, $\Pr(X=n)=\binom{n-1}{k-1}p^k(1-p)^{n-k}$.
+\section*{2.15}
+Since it is inefficient to algebraically compute the expectation of a negative binomial distribution,
+simply introduce $X_1,...,X_k$ where $X_i$ denotes the number of flips performed after $(i-1)$th head until $i$th head.
+Then, $\textbf{E}[\sum\limits_{i=1}^kX_i]=\sum\limits_{i=1}^k\textbf{E}[X_i]=k/p$.
+\section*{2.16}
+(a) Take $n=2^k$, and let $X_i$ be an indicator variable that is $1$ if a streak of length $\log_2n+1=k+1$ occurred starting from the $i$th flip.\\
+Then $\textbf{E}[\sum\limits_{i=1}^{n-k}X_i]=\sum\limits_{i=1}^{n-k}\textbf{E}[X_i]=(n-k)(\frac{1}{2})^k=1-\frac{\log_2n}{n}$ holds.\\
+Now, $1-\frac{\log_2n}{n}$ is $1-o(1)$ since $\lim\limits_{n\rightarrow\infty}\frac{\log_2n}{n}=0$.\\
+(b) Let $\lfloor \log_2 n - 2\log_2\log_2 n \rfloor=\delta$.
+Note that the desired probability is upper-bounded by the probability that all disjoint $\delta$ blocks are not a streak, which is $(1-(\frac{1}{2})^{\delta-1})^{\lfloor n/\delta \rfloor}$.\\
+$(1-(\frac{1}{2})^{\delta-1})^{\lfloor n/\delta \rfloor}\leq(1-(\frac{1}{2})^{\log_2n-2\log_2\log_2n})^{\lfloor n/\delta \rfloor}=(1-\frac{(\log_2n)^2}{n})^{\lfloor n/\delta \rfloor}$\\
+$\leq(1-\frac{(\log_2n)^2}{n})^{n/\log_2n}\leq e^{-\log_2n}=n^{-\log_2e}\leq n^{-1}$ ($1-x\leq e^{-x}$). $\blacksquare$
+\section*{2.17}
+$\textbf{E}[Y_0]=1$, $\textbf{E}[Y_1]=2p$ obviously holds. Now, we have $\textbf{E}[Y_i|Y_{i-1}=j]=2pj$ for $i\geq 1$.
+Then, by the definition of conditional expectation, $\textbf{E}[Y_i]=\textbf{E}[\textbf{E}[Y_i|Y_{i-1}]]=\sum_j2pj\Pr(Y_{i-1}=j)=2p\textbf{E}[Y_{i-1}]$.
+Thus, $\textbf{E}[Y_i]=(2p)^i$, and the expected total number of copies $\textbf{E}[\sum\limits_{i=0}^\infty Y_i]$ is bounded if $p<1/2$.
+\section*{2.18}
+Inductive proof.\\
+Base case: It is trivial on $n=1$.\\
+Inductive step: Suppose that $\Pr(X_k=i)=1/k$ for all $i$ where $X_k$ is the item stored after the $k$th item appeared.\\
+Then, $\Pr(X_{k+1}=i)=\Pr(X_k=i)\times(1-\frac{1}{k+1})=\frac{1}{k+1}$ for all $1\leq i \leq k$, and obviously $\Pr(X_{k+1}=k+1)=\frac{1}{k+1}$ which is the probability of replacement. $\blacksquare$
+\section*{2.19}
+Let $X_k$ be the item stored after the $k$th item appeared. Since $k=1$ is trivial, we will solve for $k\geq 2$.
+Then $\Pr(X_k=i)=(\frac{1}{2})^{k+1-i}$ for all $2\leq i\leq k$ and $\Pr(X_k=1)=\Pr(X_k=2)$.
+\section*{2.20}
+Let $X_i$ be an indicator variable that is $1$ if $\pi(i)=i$.
+Then the expected number of fixed points would be $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{E}[X_i]=n\times\frac{1}{n}$.
+\section*{2.21}
+
+\end{document}
