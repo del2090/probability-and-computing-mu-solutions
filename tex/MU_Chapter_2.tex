@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 
 \title {Probability and Computing, 2nd Edition \\[2ex] \large Chapter 2 Solutions}
+
 \author{Hahndeul Kim}
 \date{June 2025}
 
@@ -99,8 +100,8 @@ Thus, $\textbf{E}[Y_i]=(2p)^i$, and the expected total number of copies $\textbf
 \section*{2.18}
 Inductive proof.\\
 Base case: It is trivial on $n=1$.\\
-Inductive step: Suppose that $\Pr(X_k=i)=1/k$ for all $i$ where $X_k$ is the item stored after the $k$th item appeared.\\
-Then, $\Pr(X_{k+1}=i)=\Pr(X_k=i)\times(1-\frac{1}{k+1})=\frac{1}{k+1}$ for all $1\leq i \leq k$, and obviously $\Pr(X_{k+1}=k+1)=\frac{1}{k+1}$ which is the probability of replacement. $\blacksquare$
+Inductive step: Suppose that $\Pr(X_k=I_i)=1/k$ for all $i$ where $X_k$ is the item stored after the $k$th item ($I_k$) appeared.\\
+Then, $\Pr(X_{k+1}=I_i)=\Pr(X_k=I_i)\times(1-\frac{1}{k+1})=\frac{1}{k+1}$ for all $1\leq i \leq k$, and obviously $\Pr(X_{k+1}=I_{k+1})=\frac{1}{k+1}$ which is the probability of replacement. $\blacksquare$
 \section*{2.19}
 Let $X_k$ be the item stored after the $k$th item appeared. Since $k=1$ is trivial, we will solve for $k\geq 2$.
 Then $\Pr(X_k=i)=(\frac{1}{2})^{k+1-i}$ for all $2\leq i\leq k$ and $\Pr(X_k=1)=\Pr(X_k=2)$.
@@ -143,5 +144,10 @@ Since $(1+2+\cdots+2^{k-2})=2^{k-1}-1$, the player eventually wins a dollar.\\
 $\textbf{E}[X]=\sum\limits_{i=1}^\infty(\frac{1}{2})^i(2^{i-1}-1)=\sum\limits_{i=1}^\infty(\frac{1}{2}-(\frac{1}{2})^i)=\infty$.
 This implies that this strategy is impractical and would lead to bankruptcy, since the player has a finite amount of money.
 \section*{2.29}
+Let $S_n=\sum\limits_{j=0}^nX_j$.
+Then from the linearity of expectations for a finite number of random variables, $\textbf{E}[S_n]=\sum\limits_{j=0}^n\textbf{E}[X_j]$ holds.
+Here, RHS converges from the given absolute convergence, and thus LHS should also converge.
+Thus, applying $\lim\limits_{n\rightarrow\infty}$ on each side, we get $\textbf{E}[\sum\limits_{j=0}^\infty X_j]=\sum\limits_{j=0}^\infty\textbf{E}[X_j]$.
+\section*{2.30}
 
 \end{document}
