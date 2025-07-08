@@ -28,7 +28,8 @@ $\textbf{Var}[X-Y]=\textbf{E}[((X-Y)-\textbf{E}[X-Y])^2]=\textbf{E}[((X-\textbf{
 $=\textbf{E}[(X-\textbf{E}[X])^2] - 2\textbf{E}[(X-\textbf{E}[X])(Y-\textbf{E}[Y])]+\textbf{E}[(Y-\textbf{E}[Y])^2]$\\
 $=\textbf{Var}[X]-\textbf{Cov}[X,Y]+\textbf{Var}[Y]=\textbf{Var}[X]+\textbf{Var}[Y]$ ($X \perp\!\!\!\perp Y$). $\blacksquare$
 \section*{3.6}
-Let $X_i$ ($1 \leq i \leq k$) be the number of flips after $(i-1)$th head until $i$th head. Since all flips are independent, the desired variance could be computed as $\sum\limits_{i=1}^k \textbf{Var}[X_i]$.\\
+Let $X_i$ ($1 \leq i \leq k$) be the number of flips after $(i-1)$th head until $i$th head.
+Since all flips are independent, the desired variance could be computed as $\sum\limits_{i=1}^k \textbf{Var}[X_i]$.\\
 As $X_i\sim Geom(p)$, $\textbf{Var}[X_i]=(1-p)/p^2$ for all $i$. Thus, the desired variance is $k(1-p)/p^2$.
 \section*{3.7}
 Let $X$ be the number of increases. Then $\Pr(X=k)=\binom{d}{k}p^k(1-p)^{d-k}$.\\
@@ -41,5 +42,10 @@ $\textbf{E}[V^2]=q^2\sum\limits_{k=0}^d\binom{d}{k}(pr^2)^k(\frac{1-p}{r^2})^{d-
 Thus, $\textbf{Var}[V]=q^2 \left((pr^2 + \frac{1-p}{r^2})^d - (pr + \frac{1-p}{r})^{2d}\right)$.\\
 By plugging $q=1$ in, we get the desired result.
 \section*{3.8}
+Let $X$ be the running time of the given algorithm on input strings of size $n$.
+Now, let $M$ be the longest running time of the algorithm among the input strings of size $n$. Then $\Pr(X\geq M) \geq 1/2^n$ by definition.\\
+By Markov's inequality, $1/2^n \leq \Pr(X\geq M) \leq \frac{\textbf{E}[X]}{M}$, which leads to $M \leq 2^n \textbf{E}[X]$.
+Since $\textbf{E}[X]=O(n^2)$, we get $M=O(n^2 2^n)$.
+\section*{3.9}
 
 \end{document}
