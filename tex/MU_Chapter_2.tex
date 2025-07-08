@@ -149,5 +149,20 @@ Then from the linearity of expectations for a finite number of random variables,
 Here, RHS converges from the given absolute convergence, and thus LHS should also converge.
 Thus, applying $\lim\limits_{n\rightarrow\infty}$ on each side, we get $\textbf{E}[\sum\limits_{j=0}^\infty X_j]=\sum\limits_{j=0}^\infty\textbf{E}[X_j]$.
 \section*{2.30}
-
+Since a player needs to lose all previous $j-1$ bets in order to participate in the $j$th bet,
+$\textbf{E}[X_j]=(1-(\frac{1}{2})^{j-1}) \times 0 + (\frac{1}{2})^j\times2^{j-1} + (\frac{1}{2})^j\times(-2^{j-1})=0$ holds.\\
+$\sum\limits_{j=0}^\infty \textbf{E}[X_j]=0$ holds, thus the linearity of expectations does not hold here.\\
+This problem does not fall under the circumstances of problem 2.29, since $\sum\limits_{j=0}^\infty\textbf{E}[|X_j|]=\infty$ holds.
+\section*{2.31}
+The expected winnings would be $\sum\limits_{k=1}^\infty(\frac{1}{2})^k \times \frac{2^k}{k} = \sum\limits_{k=1}^\infty \frac{1}{k} = \infty$. Thus, the player should be willing to pay any amount of money to play the game.
+\section*{2.32}
+(a) By definition, $\Pr(E_i)=0$ for $i \leq m$, and $\Pr(E)=\sum\limits_{i=1}^n\Pr(E_i)$ is true.\\
+If $i>m$, then the $i$th candidate must be the best among all $n$ candidates, and the second-best candidate must be one of the first $m$ candidates.
+Thus, $\Pr(E_i)=\frac{1}{n}\times\frac{m}{i-1}$.\\
+Therefore, $\Pr(E)=\sum\limits_{i=m+1}^n\frac{1}{n}\times\frac{m}{i-1}=\frac{m}{n}\sum\limits_{j=m+1}^n\frac{1}{j-1}$.\\
+(b) Since $\sum\limits_{j=m+1}^n\frac{1}{j-1} \geq \int_{m+1}^{n+1}\frac{1}{x-1}dx=\ln n-\ln m$, $\Pr(E) \geq \frac{m}{n}(\ln n-\ln m)$ holds.\\
+Also, since $\sum\limits_{j=m+1}^n\frac{1}{j-1} \leq \int_{m}^{n}\frac{1}{x-1}dx=\ln (n-1)-\ln (m-1)$, $\Pr(E) \geq \frac{m}{n}(\ln (n-1)-\ln (m-1))$ holds.\\
+(c) For a fixed $n$, $\frac{\partial}{\partial m} \frac{m(\ln n - \ln m)}{n} = \frac{\ln n - \ln m - 1}{n} = 0$ when $m=n/e$.
+This choice of $m$ is the maximizer, since the given formula has only one local maximum w.r.t. $m$.\\
+Since $\frac{m(\ln n - \ln m)}{n}=1/e$ when $m=n/e$, $\Pr(E) \geq 1/e$ holds by (b).
 \end{document}
