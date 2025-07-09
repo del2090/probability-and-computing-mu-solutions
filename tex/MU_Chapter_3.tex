@@ -47,5 +47,10 @@ Now, let $M$ be the longest running time of the algorithm among the input string
 By Markov's inequality, $1/2^n \leq \Pr(X\geq M) \leq \frac{\textbf{E}[X]}{M}$, which leads to $M \leq 2^n \textbf{E}[X]$.
 Since $\textbf{E}[X]=O(n^2)$, we get $M=O(n^2 2^n)$.
 \section*{3.9}
+(a) By linearity of expectations, $\textbf{E}[X^2]=\textbf{E}[\sum\limits_{i=1}^nX_i X]=\sum\limits_{i=1}^n\textbf{E}[X_iX]$.\\
+Since $X_i$ are Bernoulli random variables, $\textbf{E}[X_iX]=\Pr(X_i=0)\times 0+\Pr(X_i=1)\times \textbf{E}[X|X_i=1]$. $\blacksquare$\\
+(b) Using the equation proven in (a), $\textbf{E}[X^2]=\sum\limits_{i=1}^np\times(1+(n-1)p)=np+n(n-1)p^2$.
+Thus, $\textbf{Var}[X]=\textbf{E}[X^2]-(\textbf{E}[X])^2=np+n(n-1)p^2-n^2p^2=np(1-p)$.
+\section*{3.10}
 
 \end{document}
