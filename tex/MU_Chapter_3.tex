@@ -52,5 +52,11 @@ Since $X_i$ are Bernoulli random variables, $\textbf{E}[X_iX]=\Pr(X_i=0)\times 0
 (b) Using the equation proven in (a), $\textbf{E}[X^2]=\sum\limits_{i=1}^np\times(1+(n-1)p)=np+n(n-1)p^2$.
 Thus, $\textbf{Var}[X]=\textbf{E}[X^2]-(\textbf{E}[X])^2=np+n(n-1)p^2-n^2p^2=np(1-p)$.
 \section*{3.10}
-
+Let $X\sim Geom(p)$, and let $Y=1$ if and only if $X=1$ and $Y=0$ otherwise. Then, by Lemma 2.5,
+$\textbf{E}[X^3]=\Pr(Y=1)\textbf{E}[X^3|Y=1]+\Pr(Y=0)\textbf{E}[X^3|Y=0]$\\
+$=p\times 1 + (1-p)\times \textbf{E}[X^3|Y=0]=p+(1-p)\times\textbf{E}[X^3|X>1]$.\\
+Now, by the memoryless property of geometric distributions, $\textbf{E}[X^3|X>1]=\textbf{E}[(X+1)^3]$.
+Thus, $\textbf{E}[X^3]=p+(1-p)(\textbf{E}[X^3]+3\textbf{E}[X^2]+3\textbf{E}[X]+1)$.\\
+This leads to $\textbf{E}[X^3]=(p^2-6p+6)/p^3$.\\
+Similarly, we can find $\textbf{E}[X^4]=(-p^3+14p^2-36p+24)/p^4$.
 \end{document}
