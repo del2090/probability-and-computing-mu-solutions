@@ -36,18 +36,18 @@ As is known, $\sum\limits_{i=0,2,\cdots}\binom{n}{i}=2^{n-1}$, so $\Pr(Y)={\frac
 (b) $\textbf{E}[\max (X,Y)]=\sum\limits_{k=1}^\infty \Pr(X\geq k$ or $Y \geq k)=\sum\limits_{k=1}^\infty(1-\Pr(X<k,Y<k))=\sum\limits_{k=1}^\infty(1-(1-(1-p)^{k-1})(1-(1-q)^{k-1}))$\\
 $=\sum\limits_{k=1}^\infty((1-p)^{k-1}+(1-q)^{k-1}-(1-p)^{k-1}(1-q)^{k-1})=\frac{1}{p}+\frac{1}{q}-\frac{1}{p+q-pq}$.\\
 (c) $\Pr(\min(X,Y)=k)=\Pr(X=k)\Pr(Y\geq k)+\Pr(Y=k)\Pr(X\geq k)-\Pr(X=Y=k)=(1-p)^{k-1}(1-q)^{k-1}(p+q-pq)=(1-(p+q-pq))^{k-1}(p+q-pq)$.\\
-(d) $\textbf{E}[X|X\leq Y]=\textbf{E}[\min(X,Y)]=1/(p+q-pq)$, since $\min(X,Y)\sim Geom(p+q-pq)$ from the previous problem.
+(d) $\textbf{E}[X|X\leq Y]=\textbf{E}[\min(X,Y)]=1/(p+q-pq)$, since $\min(X,Y)\sim Geom(p+q-pq)$ from the previous exercise.
 \section*{2.8}
 (a) Expected number of girls: $\textbf{E}[G]=1\times\sum\limits_{i=1}^k(\frac{1}{2})^i=1-2^{-k}$.\\
 Expected number of boys: $\textbf{E}[B]=(\frac{1}{2})^k\times k+\sum\limits_{i=1}^k(\frac{1}{2})^i\times(i-1)=\frac{2^k-1}{2^k}$.\\
-(b) The number of total children now follows $Geom(1/2)$. Thus, $\textbf{E}[G+B]=2$ holds. Since $\textbf{E}[G]=\lim\limits_{k\rightarrow \infty}\frac{2^k-1}{2^k}=1$ holds using the result of the previous problem, $\textbf{E}[B]=1$.
+(b) The number of total children now follows $Geom(1/2)$. Thus, $\textbf{E}[G+B]=2$ holds. Since $\textbf{E}[G]=\lim\limits_{k\rightarrow \infty}\frac{2^k-1}{2^k}=1$ holds using the result of the previous exercise, $\textbf{E}[B]=1$.
 \section*{2.9}
 (a) $\textbf{E}[\max(X_1,X_2)]=\sum\limits_{i=1}^k\frac{i^2-(i-1)^2}{k^2}\times i=\frac{4k^2+3k-1}{6k}$.\\
 $\textbf{E}[\min(X_1,X_2)]=\sum\limits_{i=1}^k\frac{(k+1-i)^2-(k-i)^2}{k^2}\times i=\frac{2k^2+3k+1}{6k}$.\\
 (b) Since two dice are independent, $\textbf{E}[X_1]=\textbf{E}[X_2]=\frac{k+1}{2}$. Therefore, the claim holds.\\
 (c) By the linearity of expectations, $\textbf{E}[\max(X_1,X_2)]+\textbf{E}[\min(X_1,X_2)]=\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]$ holds.
 Since $\{\max(X_1,X_2),\min(X_1,X_2)\}=\{X_1,X_2\}$, $\textbf{E}[\max(X_1,X_2)+\min(X_1,X_2)]=\textbf{E}[X_1+X_2]=\textbf{E}[X_1]+\textbf{E}[X_2]$ holds, again by the linearity of expectations.
-Thus, the claim in the previous problem must be true.
+Thus, the claim in the previous exercise must be true.
 \section*{2.10}
 (a) Base case: when $n=1,2$, it is trivial from the definition of convexity.\\
 Inductive step: Suppose that the claim holds for $n=k$.
@@ -57,7 +57,7 @@ $f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq(1-\lambda_{k+1})f(\frac{1}{1-\lambda
 Now, from the inductive hypothesis, $(1-\lambda_{k+1})f(\frac{1}{1-\lambda_{k+1}}(\sum\limits_{i=1}^k\lambda_ix_i))\leq(1-\lambda_{k+1})\sum\limits_{i=1}^k\frac{\lambda_i}{1-\lambda_{k+1}}f(x_i)=\sum\limits_{i=1}^{k}\lambda_if(x_i)$ holds.
 Therefore, $f(\sum\limits_{i=1}^{k+1}\lambda_ix_i)\leq\sum\limits_{i=1}^{k+1}\lambda_if(x_i)$. $\blacksquare$\\
 (b) If $X$ takes on only finitely many values, we can denote the set of possible values as $\{x_1,...,x_n\}$.
-Then, since $\sum_i\Pr(X=x_i)=1$, $f(\sum\limits_{i=1}^n\Pr(X=x_i)x_i)\leq\sum\limits_{i=1}^n\Pr(X=x_i)f(x_i)$ holds from the previous problem.
+Then, since $\sum_i\Pr(X=x_i)=1$, $f(\sum\limits_{i=1}^n\Pr(X=x_i)x_i)\leq\sum\limits_{i=1}^n\Pr(X=x_i)f(x_i)$ holds from the previous exercise.
 This is equivalent to $f(\textbf{E}[X])\leq\textbf{E}[f(X)]$.
 \section*{2.11}
 Inductive proof.\\
@@ -76,7 +76,7 @@ Let $Y_i$ be the indicator variable that is $1$ if $i$th card was not chosen wit
 Then the expected number of unchosen cards would be $\sum\limits_{i=1}^n\textbf{E}[Y_i]=n(\frac{n-1}{n})^{2n}$.\\
 Using the same idea, the expected number of cards chosen only once would be $n\times\binom{2n}{1}\frac{1}{n}(\frac{n-1}{n})^{2n-1}$.
 \section*{2.13}
-(a) The problem is equivalent to the coupon collector's problem, since the probability of observing the $i$th coupon stays as $1-\frac{2i-2}{2n}=1-\frac{i-1}{n}$.\\
+(a) The exercise is equivalent to the coupon collector's problem, since the probability of observing the $i$th coupon stays as $1-\frac{2i-2}{2n}=1-\frac{i-1}{n}$.\\
 (b) For any positive integer $k$, the result is equivalent. The probability of observing the $i$th coupon is $1-\frac{ki-k}{kn}=1-\frac{i-1}{n}$.
 \section*{2.14}
 The $n$th flip must be head. Taking this into account, there would be $\binom{n-1}{k-1}$ ways to assign the ordering of $k-1$ heads and $n-k$ tails.\\
@@ -152,7 +152,7 @@ Thus, applying $\lim\limits_{n\rightarrow\infty}$ on each side, we get $\textbf{
 Since a player needs to lose all previous $j-1$ bets in order to participate in the $j$th bet,
 $\textbf{E}[X_j]=(1-(\frac{1}{2})^{j-1}) \times 0 + (\frac{1}{2})^j\times2^{j-1} + (\frac{1}{2})^j\times(-2^{j-1})=0$ holds.\\
 $\sum\limits_{j=0}^\infty \textbf{E}[X_j]=0$ holds, thus the linearity of expectations does not hold here.\\
-This problem does not fall under the circumstances of problem 2.29, since $\sum\limits_{j=0}^\infty\textbf{E}[|X_j|]=\infty$ holds.
+This exercise does not fall under the circumstances of exercise 2.29, since $\sum\limits_{j=0}^\infty\textbf{E}[|X_j|]=\infty$ holds.
 \section*{2.31}
 The expected winnings would be $\sum\limits_{k=1}^\infty(\frac{1}{2})^k \times \frac{2^k}{k} = \sum\limits_{k=1}^\infty \frac{1}{k} = \infty$. Thus, the player should be willing to pay any amount of money to play the game.
 \section*{2.32}
