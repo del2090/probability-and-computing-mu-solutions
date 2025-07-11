@@ -64,6 +64,10 @@ Let $X=\sum\limits_{i<j} X_{i,j}$, where $X_{i,j}$ is an indicator variable that
 $\textbf{E}[X^2]=\textbf{E}[\sum\limits_{i<j}X_{i,j}^2 +\sum\limits_{|\{i,j,k,l\}|=4}X_{i,j}X_{k,l} + \sum\limits_{i<j<k}2(X_{i,j}X_{j,k}+X_{i,j}X_{i,k}+X_{i,k}X_{j,k})]$
 $=\binom{n}{2}\cdot\frac{1}{2}+\binom{n}{4}\cdot\binom{4}{2}\cdot\frac{1}{4}+2\cdot\binom{n}{3}\cdot\left( \frac{1}{6}+\frac{1}{3}+\frac{1}{3}\right)=\frac{n(n-1)(9n^2-5n+10)}{144}$.\\
 Since $\textbf{E}[X]=\frac{n(n-1)}{4}$, $\textbf{Var}[X]=\textbf{E}[X^2]-(\textbf{E}[X])^2=\frac{n(n-1)(2n+5)}{72}$.
-\section#{3.12}
+\section*{3.12}
+Let $X$ be a random variable with probability distribution like $\Pr(X=n)=\frac{1}{\zeta (3)n^3}$.\\
+Then $\textbf{E}[X]=\sum\limits_{n=1}^\infty n\times\frac{1}{\zeta (3)n^3}=\frac{1}{\zeta(3)}\times\frac{\pi^2}{6}<\infty$.\\
+However, since $\textbf{E}[X^2]=\sum\limits_{n=1}^\infty n^2\times\frac{1}{\zeta (3)n^3}=\sum\limits_{n=1}^\infty \frac{1}{n}\times\frac{1}{\zeta (3)}=\infty$ (harmonic series), the variance of $X$ is unbounded.
+\section*{3.13}
 
 \end{document}
