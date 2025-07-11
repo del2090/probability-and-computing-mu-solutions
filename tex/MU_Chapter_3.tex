@@ -5,7 +5,7 @@
 
 \title {Probability and Computing, 2nd Edition \\[2ex] \large Solutions to Chapter 3: Moments and Deviations}
 \author{Hahndeul Kim}
-\date{June 2025}
+\date{July 2025}
 
 \begin{document}
 
@@ -102,5 +102,18 @@ This leads to $\Pr(-X+\mu \geq |\mu-m|) \leq \frac{\sigma^2}{(\mu-m)^2+\sigma^2}
 Similarly, from $1/2 \leq \Pr(X\leq m) \leq \Pr(-X+\mu\geq|\mu-m|) \leq \frac{\sigma^2}{(\mu-m)^2+\sigma^2}$,
 we conclude $(\mu-m)^2 \leq \sigma^2$, thus $|\mu-m| \leq \sigma$. $\blacksquare$
 \section*{3.20}
+We first prove $\Pr(Y\neq 0) \leq \textbf{E}[Y]$. This is trivial since\\
+$\textbf{E}[Y]-\Pr(Y\neq 0)=\sum\limits_{i=1}^\infty i\Pr(Y=i)-\sum\limits_{i=1}^\infty \Pr(Y=i)=\sum\limits_{i=1}^\infty(i-1)\Pr(Y=i)\geq 0$.\\
+Now we prove $\frac{\textbf{E}[Y]^2}{\textbf{E}[Y^2]} \leq \Pr(Y\neq 0)$.
+Let $X=Y|Y\neq 0$ such that $\Pr(X=x)=\Pr(Y=x|Y\neq 0)$. Since $(\textbf{E}[X])^2 \leq \textbf{E}[X^2]$, $\textbf{E}[Y|Y\neq 0]^2 \leq \textbf{E}[Y^2|Y\neq 0]$ holds.\\
+Now, consider that $\textbf{E}[X]=\textbf{E}[0]\Pr(X=0)+\textbf{E}[X|X\neq0]\Pr(X\neq 0)=\textbf{E}[X|X\neq0]\Pr(X\neq 0)$ is valid for any random variable $X$.\\
+Combined with $\textbf{E}[Y|Y\neq 0]^2 \leq \textbf{E}[Y^2|Y\neq 0]$,
+$\left(\frac{\textbf{E}[Y]}{\Pr(Y\neq 0)}\right)^2 \leq \frac{\textbf{E}[Y^2]}{\Pr(Y\neq 0)}$ holds. $\blacksquare$
+\section*{3.21}
+(a) Let $Y=|X-\textbf{E}[X]|$. Then by Markov's inequality,\\
+$\Pr(Y>t\sqrt[\leftroot{-2}\uproot{2}k]{\textbf{E}[Y^k]}) =\Pr(Y^k > t^k\textbf{E}[Y^k]) \leq \Pr(Y^k \geq t^k\textbf{E}[Y^k])\leq1/t^k$.\\
+(b) If $k$ is odd, then $Y^k \neq (X-\textbf{E}[X])^k$ and $(X-\textbf{E}[X])^k$ is not always positive.
+Therefore we cannot apply Markov's inequality in this case.
+\section*{3.22}
 
 \end{document}
