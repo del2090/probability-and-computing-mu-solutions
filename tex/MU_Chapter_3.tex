@@ -72,5 +72,35 @@ However, since $\textbf{E}[X^2]=\sum\limits_{n=1}^\infty n^2\times\frac{1}{\zeta
 Let $X$ be a random variable such that $\Pr(X=n)=\frac{1}{\zeta (k+2)n^{k+2}}$.\\
 Then, similar to problem 3.12, $\textbf{E}[X^k]$ converges and $\textbf{E}[X^{k+1}]$ diverges.
 \section*{3.14}
+$\textbf{Var}[\sum\limits_{i=1}^nX_i]=\textbf{E}\left[\left(\sum\limits_{i=1}^n(X_i-\textbf{E}[X_i])\right)^2\right]$
+$=\sum\limits_{i=1}^n\textbf{Var}[X_i]+\sum\limits_{i\neq j}\textbf{Cov}[X_i,X_j]=\sum\limits_{i=1}^n\textbf{Var}[X_i]+2\sum\limits_{i=1}^n\sum\limits_{i<j}\textbf{Cov}[X_i,X_j]$. $\blacksquare$
+\section*{3.15}
+$\textbf{E}[X_iX_j]=\textbf{E}[X_i]\textbf{E}[X_j]$ indicates that $\textbf{Cov}[X_i,X_j]=\textbf{E}[X_iX_j]-\textbf{E}[X_i]\textbf{E}[X_j]=0$.\\
+Thus, $\textbf{Var}[X]=\sum\limits_{i=1}^n\textbf{Var}[X_i]$ holds.
+\section*{3.16}
+Suppose that we want the expectation to be $\mu$.
+Then the desired $X$ should satisfy $\Pr(X=k\mu)=1/k$ and $\Pr(X=0)=1-1/k$.
+\section*{3.17}
+Suppose that we want the expectation to be $\mu$.
+Then in order to satisfy $\Pr(|X-\textbf{E}[X]|\geq a)=\frac{\textbf{Var}[X]}{a^2}$, $X$ should satisfy:\\
+$\Pr(X=\mu)=p$, $\Pr(X=\mu+a)=(1-p)/2$ and $\Pr(X=\mu-a)=(1-p)/2$.
+\section*{3.18}
+(a) $\Pr(X-\textbf{E}[X]\geq t\sigma[X])=\Pr[t(X-\textbf{E}[X])+\sigma[X]\geq(t^2+1)\sigma[X]]$\\
+$\leq\Pr[(t(X-\textbf{E}[X])+\sigma[X])^2\geq(t^2+1)^2\textbf{Var}[X]]$\\
+$\leq \textbf{E}[(t(X-\textbf{E}[X])+\sigma[X])^2]/(t^2+1)^2\textbf{Var}[X]$ (Markov's inequality)\\
+=$(t^2\textbf{Var}[X]+\textbf{Var}[X])/(t^2+1)^2\textbf{Var}[X]=1/(t^2+1)$. $\blacksquare$\\
+(b) Since probabilities cannot be greater than $1$, we only consider $t \geq 1$.\\
+By Chebyshev's inequality, $\Pr(|X-\textbf{E}[X]| \geq t\sigma[X]) \leq 1/t^2 \leq 2/(1+t^2)$. $\blacksquare$
+\section*{3.19}
+(i) If $\mu=m$, then the claim is trivially valid.\\
+(ii) If $\mu < m$, then let $t=|\mu-m|/\sigma$. Then using the result of exercise 3.18(a), $\Pr(X-\mu \geq |\mu-m|) \leq \frac{\sigma^2}{(\mu-m)^2+\sigma^2}$.\\
+Now, from $1/2 \leq \Pr(X\geq m) \leq \Pr(X-\mu\geq|\mu-m|) \leq \frac{\sigma^2}{(\mu-m)^2+\sigma^2}$,
+we conclude $(\mu-m)^2 \leq \sigma^2$, thus $|\mu-m| \leq \sigma$.\\
+(iii) If $\mu > m$, then let $t=|\mu-m|/\sigma$.
+Now, substituting $X$ into $-X$ in the result of exercise 3.18(a), we get $\Pr(-X + \textbf{E}[X] \geq t\sigma[X]) \leq 1/(t^2+1)$.\\
+This leads to $\Pr(-X+\mu \geq |\mu-m|) \leq \frac{\sigma^2}{(\mu-m)^2+\sigma^2}$.\\
+Similarly, from $1/2 \leq \Pr(X\leq m) \leq \Pr(-X+\mu\geq|\mu-m|) \leq \frac{\sigma^2}{(\mu-m)^2+\sigma^2}$,
+we conclude $(\mu-m)^2 \leq \sigma^2$, thus $|\mu-m| \leq \sigma$. $\blacksquare$
+\section*{3.20}
 
 \end{document}
