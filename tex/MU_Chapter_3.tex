@@ -121,5 +121,19 @@ Now, since $X_i\sim Bernoulli(1/n)$, $\textbf{Var}[X_i]=\frac{1}{n}\left(1-\frac
 $\textbf{Cov}[X_i,X_j]=\textbf{E}[X_iX_j]-\textbf{E}[X_i]\textbf{E}[X_j]$. Since $\textbf{E}[X_iX_j]=\frac{1}{n(n-1)}$, $\textbf{Cov}[X_i,X_j]=\frac{1}{n(n-1)}-\frac{1}{n^2}$.\\
 Thus, $\textbf{Var}[\sum\limits_{i=1}^nX_i]=1-\frac{1}{n}+n(n-1)\left(\frac{1}{n(n-1)}-\frac{1}{n^2}\right)=1$.
 \section*{3.23}
-
+(a) Since each coin is fair, the pair of coins to decide the value of $Y_i$ can be one of $(H,T),(T,H),(H,H),(T,T)$ with equal probability. Thus, $\Pr(Y_i=0)=\Pr(Y_i=1)=1/2$.\\
+(b) Let the $i$th coin be denoted as $C_i$.
+Then if the first pair is $C_1,C_2$, the second pair is $C_1,C_3$ and the third pair is $C_2,C_3$,\\
+$\Pr(Y_1=Y_2=Y_3=0\neq1/8=\Pr(Y_1=1)\Pr(Y_2=1)\Pr(Y_3=1)$.\\
+(c) Let $i$th pair be $C_a,C_b$ and $j$th pair be $C_c,C_d$.\\
+If $|\{a,b,c,d\}|=4$, then $Y_i$ and $Y_j$ are independent. The claim trivially holds.\\
+If $|\{a,b,c,d\}|=3$, then $\textbf{E}[Y_iY_j]=\Pr(Y_i=Y_j=1)=1/4=\textbf{E}[X_i]\textbf{E}[X_j]$.\\
+(d) $\textbf{Var}[Y]=\textbf{Var}[\sum\limits_{i=1}^mY_i]=\sum\limits_{i=1}^m\textbf{Var}[Y_i]$ holds from the result of exercise 3.15.\\
+Since $\textbf{Var}[Y_i]=1/4$, $\textbf{Var}[Y]=\frac{n(n-1)}{8}$.\\
+(e) By Chebyshev's inequality, $\Pr(|Y-\textbf{E}[Y]| \geq n) \leq \frac{\textbf{Var}[Y]}{n^2}=\frac{n-1}{8n}\leq\frac{1}{8}$.
+\section*{3.24}
+\section*{3.25}
+\section*{3.26}
+By Chebyshev's inequality, $\Pr\left(\left|\frac{X_1+X_2+\cdots+X_n}{n}-\mu\right|>\epsilon\right) \leq \frac{\textbf{Var}[\sum\limits_{i=1}^nX_i/n]}{\epsilon^2}=\frac{\sigma^2}{n\epsilon^2}$.\\
+Since $0\leq\lim\limits_{n\rightarrow\infty}\Pr\left(\left|\frac{X_1+X_2+\cdots+X_n}{n}-\mu\right|>\epsilon\right)\leq\lim\limits_{n\rightarrow\infty}\frac{\sigma^2}{n\epsilon^2}=0$, the desired result is obtained by the squeeze theorem.
 \end{document}
