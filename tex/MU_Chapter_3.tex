@@ -112,8 +112,14 @@ $\left(\frac{\textbf{E}[Y]}{\Pr(Y\neq 0)}\right)^2 \leq \frac{\textbf{E}[Y^2]}{\
 \section*{3.21}
 (a) Let $Y=|X-\textbf{E}[X]|$. Then by Markov's inequality,\\
 $\Pr(Y>t\sqrt[\leftroot{-2}\uproot{2}k]{\textbf{E}[Y^k]}) =\Pr(Y^k > t^k\textbf{E}[Y^k]) \leq \Pr(Y^k \geq t^k\textbf{E}[Y^k])\leq1/t^k$.\\
-(b) If $k$ is odd, then $Y^k \neq (X-\textbf{E}[X])^k$ and $(X-\textbf{E}[X])^k$ is not always positive.
-Therefore we cannot apply Markov's inequality in this case.
+(b) If $k$ is odd, then $Y^k \neq (X-\textbf{E}[X])^k$ and $(X-\textbf{E}[X])^k$ may not always be positive.
+Therefore, we cannot apply Markov's inequality in this case.
 \section*{3.22}
+Let $X_i$ be indicator variables that are $1$ if $\pi(i)=i$. Then $X_i\sim Bernoulli(1/n)$.\\
+Then $\textbf{Var}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{Var}[X_i]+2\sum\limits_{i=1}^n\sum\limits_{i<j}\textbf{Cov}[X_i,X_j]$.\\
+Now, since $X_i\sim Bernoulli(1/n)$, $\textbf{Var}[X_i]=\frac{1}{n}\left(1-\frac{1}{n}\right)$.\\
+$\textbf{Cov}[X_i,X_j]=\textbf{E}[X_iX_j]-\textbf{E}[X_i]\textbf{E}[X_j]$. Since $\textbf{E}[X_iX_j]=\frac{1}{n(n-1)}$, $\textbf{Cov}[X_i,X_j]=\frac{1}{n(n-1)}-\frac{1}{n^2}$.\\
+Thus, $\textbf{Var}[\sum\limits_{i=1}^nX_i]=1-\frac{1}{n}+n(n-1)\left(\frac{1}{n(n-1)}-\frac{1}{n^2}\right)=1$.
+\section*{3.23}
 
 \end{document}
