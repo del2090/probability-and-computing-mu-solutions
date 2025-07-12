@@ -33,5 +33,10 @@ From Chernoff bound, we find that $\Pr(X\geq (1+\frac{1}{10})50)\leq \exp(-\frac
 For $Y\sim B(1000,\frac{1}{2})$, $\Pr(Y\geq 550)\approx0.0009$.\\
 From Chernoff bound, we find that $\Pr(Y\geq (1+\frac{1}{10})500)\leq \exp(-\frac{500}{3}\cdot\frac{1}{10^2})=\exp(-\frac{5}{3})\approx0.1889$.\\
 \section*{4.5}
+Let $Y=NX$, so that we aim to satisfy $\Pr(|Y-Np|>N\epsilon p) \leq \delta$. Consider that\\
+$\Pr(Y>Np(1+\epsilon)) < \exp(-Np\cdot \frac{\epsilon^2}{3})$, and $\Pr(Y<Np(1-\epsilon)) < \exp(-Np\cdot \frac{\epsilon^2}{2})$.\\
+Thus, we aim to satisfy $\exp(-Np\cdot \frac{\epsilon^2}{3})+\exp(-Np\cdot \frac{\epsilon^2}{2}) \leq 2\exp(-Np\cdot \frac{\epsilon^2}{3}) \leq \delta$.\\
+$\therefore N \geq \frac{3}{p\epsilon^2} \ln \frac{2}{\delta}$. With $\epsilon=0.1$, $\delta=0.05$ and $0.2 \leq p \leq 0.8$, $N\geq1500\ln40\approx5533$.
+\section*{4.6}
 
 \end{document}
