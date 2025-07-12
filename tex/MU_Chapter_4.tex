@@ -23,5 +23,15 @@ $=\frac{144}{n^2}\times(n\cdot \frac{1}{6}\cdot\frac{5}{6})=20/n$.\\
 To use Chernoff bounds, let $\delta=1/2$. Then $\Pr(X\geq n/4)=\Pr(X\geq(1+\delta)\textbf{E}[X])$\\
 $\leq\left(\frac{e^{0.5}}{1.5^{1.5}}\right)^{n/6}=\left(\frac{e}{1.5^3}\right)^{n/12}$.
 \section*{4.3}
+(a) Let $X\sim B(n,p)$. Then $M_X(t)=\textbf{E}[e^{tX}]=\sum\limits_{i=0}^ne^{it}\Pr(X=i)$\\
+$=\sum\limits_{i=0}^ne^{it}\binom{n}{i}p^i(1-p)^{n-i}=\sum\limits_{i=0}^n\binom{n}{i}(pe^t)^i(1-p)^{n-i}=(pe^t+1-p)^n$.\\
+(b) $M_{X+Y}(t)=\textbf{E}[e^{t(X+Y)}]=\textbf{E}[e^{tX}e^{tY}]=\textbf{E}[e^{tX}]\textbf{E}[e^{tY}]=(pe^t+1-p)^{m+n}$.\\
+(c) Since moment generating function uniquely determines the distribution, $X+Y\sim B(m+n,p)$.
+\section*{4.4}
+Let the total number of heads be $X$, where $X\sim B(100,\frac{1}{2})$. Then we find $\Pr(X\geq55)\approx0.1841$.\\
+From Chernoff bound, we find that $\Pr(X\geq (1+\frac{1}{10})50)\leq \exp(-\frac{50}{3}\cdot\frac{1}{10^2})=\exp(-\frac{1}{6})\approx0.8465$.\\
+For $Y\sim B(1000,\frac{1}{2})$, $\Pr(Y\geq 550)\approx0.0009$.\\
+From Chernoff bound, we find that $\Pr(Y\geq (1+\frac{1}{10})500)\leq \exp(-\frac{500}{3}\cdot\frac{1}{10^2})=\exp(-\frac{5}{3})\approx0.1889$.\\
+\section*{4.5}
 
 \end{document}
