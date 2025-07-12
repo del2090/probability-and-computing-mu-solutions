@@ -12,5 +12,16 @@
 \maketitle
 \newpage
 \section*{4.1}
+Let the number of games that Alice wins be $X$, where $X\sim B(n,0.6)$. Alice will lose the tournament with probability $\Pr(X\leq \frac{n-1}{2})$.
+Now, let $\delta$ s. t. $(1-\delta) \times \frac{3n}{5} = \frac{n-1}{2}$ to obtain the tightest bound.\\
+$\Pr(X\leq \frac{n-1}{2})=\Pr(X\leq(1-\delta)\textbf{E}[X])\leq \exp(-\frac{3n}{5}\cdot \delta^2 \cdot \frac{1}{2})$\\
+$=\exp(-\frac{1}{10}(\frac{1}{12}n+\frac{5}{6}+\frac{25}{12n}))\leq \exp(-\frac{1}{8})$ (AM-GM inequality).
+\section*{4.2}
+With Markov's inequality, $\Pr(X\geq n/4) \leq (n/6)/(n/4)=2/3$.\\
+With Chebyshev's inequality, $\Pr(X\geq n/4) \leq \Pr(|X-n/6|\geq n/12)\leq \frac{\textbf{Var}[X]}{(n/12)^2}$\\
+$=\frac{144}{n^2}\times(n\cdot \frac{1}{6}\cdot\frac{5}{6})=20/n$.\\
+To use Chernoff bounds, let $\delta=1/2$. Then $\Pr(X\geq n/4)=\Pr(X\geq(1+\delta)\textbf{E}[X])$\\
+$\leq\left(\frac{e^{0.5}}{1.5^{1.5}}\right)^{n/6}=\left(\frac{e}{1.5^3}\right)^{n/12}$.
+\section*{4.3}
 
 \end{document}
