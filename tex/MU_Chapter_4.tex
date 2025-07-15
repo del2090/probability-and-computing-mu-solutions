@@ -38,5 +38,10 @@ $\Pr(Y>Np(1+\epsilon)) < \exp(-Np\cdot \frac{\epsilon^2}{3})$, and $\Pr(Y<Np(1-\
 Thus, we aim to satisfy $\exp(-Np\cdot \frac{\epsilon^2}{3})+\exp(-Np\cdot \frac{\epsilon^2}{2}) \leq 2\exp(-Np\cdot \frac{\epsilon^2}{3}) \leq \delta$.\\
 $\therefore N \geq \frac{3}{p\epsilon^2} \ln \frac{2}{\delta}$. With $\epsilon=0.1$, $\delta=0.05$ and $0.2 \leq p \leq 0.8$, $N\geq1500\ln40\approx5533$.
 \section*{4.6}
+(a) Let $X\sim B(1000000, 0.02)$. Then $\Pr(X\geq 40000) \leq e^{-20000/3}$.\\
+(b) Set $X$ and $Y$ as given and choose $k$, $l$ such that $l \leq k - 10000$ so that bounding $\Pr((X>k)\cap(Y<l))$ suffices.
+As examples, we choose $k=15300$ and $l=4900$ here.
+Since $X\sim B(510000, 0.02)$, $Y\sim B(490000,0.02)$ and $X \perp\!\!\!\perp Y$, $\Pr((X>k)\cap(Y<l)) = \Pr(X>k)\Pr(Y<l) \leq e^{-10200/12}\times e^{-9800/8} = e^{-2025}$.
+\section*{4.7}
 
 \end{document}
