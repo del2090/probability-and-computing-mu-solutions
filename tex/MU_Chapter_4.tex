@@ -43,5 +43,14 @@ $\therefore N \geq \frac{3}{p\epsilon^2} \ln \frac{2}{\delta}$. With $\epsilon=0
 As examples, we choose $k=15300$ and $l=4900$ here.
 Since $X\sim B(510000, 0.02)$, $Y\sim B(490000,0.02)$ and $X \perp\!\!\!\perp Y$, $\Pr((X>k)\cap(Y<l)) = \Pr(X>k)\Pr(Y<l) \leq e^{-10200/12}\times e^{-9800/8} = e^{-2025}$.
 \section*{4.7}
+Recall that $M_X(t)=\prod\limits_{i=1}^n (p_ie^t + (1-p_i)) = \prod\limits_{i=1}^n (1+p_i(e^t-1))\leq \prod\limits_{i=1}^ne^{p_i(e^t-1)}$\\
+$=e^{\mu(e^t-1)}$ holds when $X$ is the sum of Poisson trials ($\Pr(X_i=1)=p_i$).\\
+Let $t=\ln (1+\delta)$ and follow the derivation of Chernoff bounds.\\
+$\Pr(X\geq (1+\delta)\mu_H) \leq \frac{\textbf{E}[e^{tX}]}{e^{t(1+\delta)\mu_H}}\leq\frac{e^{\mu(e^t-1)}}{e^{t(1+\delta)\mu_H}}$
+$\leq \left( \frac{e^{e^t-1}}{e^{t(1+\delta)}}\right)^{\mu_H}=\left( \frac{e^\delta}{(1+\delta)^{(1+\delta)}}\right)^{\mu_H}$.\\
+Similarly, let $t=\ln (1-\delta)$ and prove the latter inequality.\\
+$\Pr(X\leq (1-\delta)\mu_L) \leq \frac{\textbf{E}[e^{tX}]}{e^{t(1-\delta)\mu_L}}\leq\frac{e^{\mu(e^t-1)}}{e^{t(1-\delta)\mu_L}}$
+$\leq \left( \frac{e^{e^t-1}}{e^{t(1-\delta)}}\right)^{\mu_L}=\left( \frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{\mu_L}$. $\blacksquare$
+\section*{4.8}
 
 \end{document}
