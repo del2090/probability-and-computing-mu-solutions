@@ -52,5 +52,22 @@ Similarly, let $t=\ln (1-\delta)$ and prove the latter inequality.\\
 $\Pr(X\leq (1-\delta)\mu_L) \leq \frac{\textbf{E}[e^{tX}]}{e^{t(1-\delta)\mu_L}}\leq\frac{e^{\mu(e^t-1)}}{e^{t(1-\delta)\mu_L}}$
 $\leq \left( \frac{e^{e^t-1}}{e^{t(1-\delta)}}\right)^{\mu_L}=\left( \frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^{\mu_L}$. $\blacksquare$
 \section*{4.8}
+For any permutation $\pi$ produced with the given approach, $\Pr(f=\pi)=\prod\limits_{i=1}^n\frac{1}{k+1-i}$ holds.
+Since the number of possible permutations is $\frac{k!}{(k-n)!}=\frac{1}{\Pr(f=\pi)}$,
+the given approach produces a permutation chosen uniformly at random from all permutations.\\
+Now, let $X_j$ be the number of black box calls to determine $f(j)$. Then $X_j\sim Geom(\frac{k+1-j}{k})$ holds.
+Thus, $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\textbf{E}[X_i]=\sum\limits_{i=1}^n\frac{k}{k+1-i}$.\\
+When $k=n$, $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\frac{n}{i}=nH(n)\approx n \ln n$.\\
+Similarly, when $k=2n$, $\textbf{E}[\sum\limits_{i=1}^nX_i]=\sum\limits_{i=1}^n\frac{2n}{n+i}=2n(H(2n)-H(n))\approx2n\ln2$. In this case, $\frac{2n+1-j}{2n}\geq\frac{2n+1-n}{2n}\geq\frac{1}{2}$.\\
+Now, to derive the desired Chernoff bound, we first compute the moment generating function of $X=\sum\limits_{i=1}^nX_j$.
+Let $p_i=\frac{2n+1-i}{2n}$. Since $X_i$ are independent, $\textbf{E}[e^{tX}]=\prod\limits_{i=1}^n\textbf{E}[e^{tX_i}]$
+$=\prod\limits_{i=1}^n\left(\prod\limits_{j=1}^\infty(e^{tj}p_i(1-p_i)^{j-1}\right)=\prod\limits_{i=1}^n\left(\frac{p_i}{1-p_i}\prod\limits_{j=1}^\infty(e^t(1-p_i))^j\right)$.\\
+Suppose that we choose $t$ s. t. $0<t<\ln2$ when deriving the Chernoff bound.\\ Then $\textbf{E}[e^{tX}]=\prod\limits_{i=1}^n\frac{p_ie^t}{1-e^t(1-p_i)}$.
+Since $t>0$, $\frac{\partial}{\partial p_i}\left(\frac{p_ie^t}{1-e^t(1-p_i)}\right)=\frac{1-e^t}{(1-e^t(1-p_i))^2}<0$.
+This leads to $\textbf{E}[e^{tX}]=\prod\limits_{i=1}^n\frac{p_ie^t}{1-e^t(1-p_i)}\leq \left(\frac{\frac{1}{2}e^t}{1-\frac{1}{2}e^t}\right)^n$.\\
+Now derive the desired Chernoff bound with $\Pr(X\geq 4n) \leq \frac{\textbf{E}[e^{tX}]}{e^{4nt}}\leq\left(\frac{1}{(2-e^t)e^{3t}}\right)^n$.\\
+Since the function $(2-e^t)e^{3t}$ has its maximum at $t=\ln\frac{3}{2}$ and $0<\ln\frac{3}{2}<\ln2$, we choose $t=\ln\frac{3}{2}$ for the tightest possible bound.\\
+The desired bound would be $\Pr(X\geq 4n) \leq \left(\frac{1}{(2-e^t)e^{3t}}\right)^n \Big|_{t=\ln\frac{3}{2}}=(\frac{16}{27})^n$.
+\section*{4.9}
 
 \end{document}
