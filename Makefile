@@ -19,3 +19,8 @@ clean:
 	      $(PDF_DIR)/*.synctex.gz \
 	      $(PDF_DIR)/*.fls \
 	      $(PDF_DIR)/*.fdb_latexmk
+
+cleanpdf:
+	rm -f $(PDF_DIR)/*.pdf
+
+.PHONY: all clean cleanpdf
