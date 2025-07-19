@@ -80,7 +80,13 @@ Then $\Pr(Y\geq t/2)=\Pr\left(Y\geq(1+(\frac{t}{2\textbf{E}[Y]}-1))\textbf{E}[Y]
 $\leq \left(\frac{e^\delta}{(1+\delta)^{1+\delta}}\right)^{\textbf{E}[Y]}=(\frac{2e}{t})^{t/2}\times e^{-\textbf{E}[Y]}\textbf{E}[Y]^{t/2}$.\\
 Since $\frac{\partial}{\partial \textbf{E}[Y]}\left( (\frac{2e}{t})^{t/2}e^{-\textbf{E}[Y]}\textbf{E}[Y]^{t/2} \right)=(\frac{2e}{t})^{t/2} e^{-\textbf{E}[Y]}\textbf{E}[Y]^{t/2-1}(t/2-\textbf{E}[Y])> 0$,\\
 substitute $t/4$ for $\textbf{E}[Y]$ to derive our bound. Thus, $\Pr(Y\geq t/2) \leq (\frac{e}{4})^{t/4}$.\\
-Here we need $t$ that satisfies $(\frac{e}{4})^{t/4} \leq \delta$, which leads to $t \geq \frac{4}{\ln \frac{4}{e}}\ln \frac{1}{\delta}$. Therefore, together with 4.9.(b), we only need $O(\log(1/\delta))$ estimates constructed from $O(r^2\log(1/\delta)/\epsilon^2)$ samples.
+Here we need $t$ that satisfies $(\frac{e}{4})^{t/4} \leq \delta$, which leads to $t \geq \frac{4}{\ln \frac{4}{e}}\ln \frac{1}{\delta}$.
+Therefore, together with 4.9.(b), we only need $O(\log(1/\delta))$ estimates constructed from $O(r^2\log(1/\delta)/\epsilon^2)$ samples.
 \section*{4.10}
+Let $X=\sum\limits_{i=1}^{1000000}X_i$ where $X_i$ denotes the winnings of the $i$th game.\\
+Then by the Chernoff bound, $\Pr(X\geq10000) \leq \frac{\textbf{E}[e^{tX}]}{e^{10000t}}=\left(\frac{\textbf{E}[e^{tX_i}]^{100}}{e^{t}}\right)^{10000}$\\
+$=\left(\frac{(167/200)e^{-t}+(4/25)e^{2t}+(1/200)e^{99t}}{e^{0.01t}}\right)^{1000000}$.
+Using graph software, you can choose $t=0.0006$ and derive $\Pr(X\geq10000) \leq 0.0001606$.
+\section*{4.11}
 
 \end{document}
