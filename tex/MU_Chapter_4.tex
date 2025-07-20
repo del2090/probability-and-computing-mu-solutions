@@ -88,5 +88,12 @@ Then by the Chernoff bound, $\Pr(X\geq10000) \leq \frac{\textbf{E}[e^{tX}]}{e^{1
 $=\left(\frac{(167/200)e^{-t}+(4/25)e^{2t}+(1/200)e^{99t}}{e^{0.01t}}\right)^{1000000}$.
 Using graph software, you can choose $t=0.0006$ and derive $\Pr(X\geq10000) \leq 0.0001606$.
 \section*{4.11}
+Since $\textbf{E}[X_i]=1$, $\textbf{E}[X]=n$. Thus, we bound $\Pr(X\geq (1+\delta)n)$ as\\
+$\Pr(X\geq (1+\delta)n)\leq\frac{\textbf{E}[e^{tX}]}{e^{t(1+\delta)n}}$ with $t>0$. $\textbf{E}[e^{tX}]=\prod\limits_{i=1}^n\textbf{E}[e^{tX_i}]=\left(\frac{1}{3}(1+e^t+e^{2t})\right)^n$\\
+leads to $\Pr(X\geq (1+\delta)n)\leq\left(\frac{1+e^t+e^{2t}}{3e^{t(1+\delta)}}\right)^n$.
+Although $t=\frac{\delta+\sqrt{4-3\delta^2}}{1-\delta}$ minimizes $\frac{1+e^t+e^{2t}}{3e^{t(1+\delta)}}$, it is too complex to be used as a generalized bound.
+Thus, we put $t=\ln(1+\delta)$ for simplicity and derive $\Pr(X\geq (1+\delta)n)\leq\left(\frac{3+3\delta+\delta^2}{3(1+\delta)^{(1+\delta)}}\right)^n$.\\
+The Chernoff bound for $\Pr(X\leq(1-\delta)n)$ can also be derived in a similar way.
+\section*{4.12}
 
 \end{document}
