@@ -95,5 +95,29 @@ Although $t=\frac{\delta+\sqrt{4-3\delta^2}}{1-\delta}$ minimizes $\frac{1+e^t+e
 Thus, we put $t=\ln(1+\delta)$ for simplicity and derive $\Pr(X\geq (1+\delta)n)\leq\left(\frac{3+3\delta+\delta^2}{3(1+\delta)^{(1+\delta)}}\right)^n$.\\
 The Chernoff bound for $\Pr(X\leq(1-\delta)n)$ can also be derived in a similar way.
 \section*{4.12}
+(a) We can think of $X_i$ as the number of tails between $i-1$th head and $i$th head.
+Now, let $Y_i$ be indicator variables that are $1$ if $i$th flip is head.
+Then let $Y=\sum\limits_{i=1}^{(1+\delta)2n}Y_i$, and derive the Chernoff bound as $\Pr(X\geq(1+\delta)2n)=\Pr(Y\leq n)$.
+Since $\textbf{E}[Y]=(1+\delta)n$, $\Pr(Y\leq n)=\Pr(Y\leq (1-\frac{\delta}{1+\delta})\textbf{E}[Y])\leq e^{-\frac{1}{2}\textbf{E}[Y](\frac{\delta}{1+\delta})^2}=e^{-\frac{n\delta^2}{2(1+\delta)}}$.\\
+(b) Here, the moment generating function for $X$ can be derived as $\textbf{E}[e^{tX}]=\left(\frac{e^t}{2-e^t}\right)^n$ for $0 < t < \ln 2$ (refer to the solution for exercise 4.8).\\
+Thus, $\Pr(X\geq(1+\delta)2n)\leq\frac{(\frac{e^t}{2-e^t})^n}{e^{t(1+\delta)2n}}=\left(\frac{1}{e^{t(1+2\delta)}(2-e^t)}\right)^n$.
+Since $e^{t(1+2\delta)}(2-e^t)$ is maximized at $t=\ln(\frac{1+2\delta}{1+\delta}) < \ln 2$, we choose it to derive the tightest bound.
+Therefore, $\Pr(X\geq(1+\delta)2n)\leq\left((\frac{1+\delta}{1+2\delta})^{1+2\delta}(1+\delta)\right)^n$.\\
+(c) To compare two bounds, we inspect the sign of $e^{-\frac{\delta^2}{2(1+\delta)}}-(\frac{1+\delta}{1+2\delta})^{1+2\delta}(1+\delta)$.
+The simpler equivalent would be $(1+2\delta)\ln(1+2\delta)-(2+2\delta)\ln(1+\delta)-\frac{\delta^2}{2(1+\delta)}$.\\
+The computation can be performed numerically using $\ln(x+1)=\sum\limits_{n=1}^\infty\frac{(-1)^n}{n}x^n$, or with the help of graph software.
+In either way, it can be shown that the bound derived in (b) is better.
+\section*{4.13}
+(a) From the Chernoff bound, $\Pr(X\geq xn) \leq \textbf{E}[e^{tX}]/e^{txn}$.\\
+Since $\textbf{E}[e^{tX}]=\prod\limits_{i=1}^n\textbf{E}[e^{tX_i}]=(1-p+pe^t)^n$, $\Pr(X\geq xn) \leq \left( \frac{1-p+pe^t}{e^{xt}}\right)^n=((1-p)e^{-xt}+pe^{(1-x)t})^n$.
+To derive the tightest bound, we solve for $\frac{\partial}{\partial t} ((1-p)e^{-xt}+pe^{(1-x)t})=0$, which gives $t=\ln(x(1-p))-\ln((1-x)p)$.
+Since $(1-p)e^{-xt}+pe^{(1-x)t}$ is convex w. r. t. $t$ with given conditions, this gives the minimum.
+By plugging this in, we can show that $\Pr(X\geq xn) \leq e^{-nF(x,p)}$.\\
+(b) Since $\frac{\partial^2}{\partial x^2} (F(x,p)-2(x-p)^2)=\frac{1}{x}+\frac{1}{1-x}-4=\frac{(2x-1)^2}{x(1-x)}\geq 0$, $F(x,p)-2(x-p)^2$ is convex w. r. t. $x$ when $0<x,p<1$.
+Considering that $\frac{\partial}{\partial x}(F(x,p)-2(x-p)^2)=0$ yields $x=p$ and $(F(x,p)-2(x-p)^2) \Big|_{x=p}=0$, we get $F(x,p)-2(x-p)^2 \geq 0$.\\
+(c) $\Pr(X\geq(p+\epsilon)n)\leq e^{-nF(p+\epsilon,p)}$ holds by (a), and $e^{-nF(p+\epsilon,p)} \leq e^{-n\times 2(p+\epsilon-p)^2}=e^{-2n\epsilon^2}$ holds by (b).\\
+(d) Take $Y_i=1-X_i$, and let $Y=n-X$. Then, $\Pr(X\leq (p-\epsilon)n)=\Pr(Y\geq((1-p)+\epsilon)n)\leq e^{-2n\epsilon^2}$ holds by (c).
+Combined with (c), we get $\Pr(|X-pn|\geq \epsilon n)=\Pr(X\leq(p-\epsilon)n)+\Pr(X\geq(p+\epsilon)n)\leq 2e^{-2n\epsilon^2}$.
+\section*{4.14}
 
 \end{document}
