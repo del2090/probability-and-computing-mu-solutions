@@ -130,5 +130,14 @@ Note that $|(1-p_i)-(-p_i)|=1$, and $\textbf{E}[X_i]=0$ for all $i$.
 Applying the Hoeffding bound to $X$, we get $\Pr(|\frac{1}{n}\sum\limits_{i=1}^nX_i | > \epsilon)=\Pr(|X|>n\epsilon)\leq2e^{-2n\epsilon^2}$.
 Now take $\epsilon=\frac{a}{n}$ to get $\Pr(|X|>a)\leq 2e^{-2a^2/n}$.
 \section*{4.16}
+\section*{4.17}
+Let the total time (in steps) of a single processor be $X=\sum\limits_{i=1}^{n/m}X_i$, where $X_i$ is the number of steps for the $i$th job of the processor.
+Since $\textbf{E}[X_i]=p+(1-p)k$, we take $Y_i$ as $X_i=1+(k-1)Y_i$ so that $Y_i\sim Bernoulli(1-p)$. With $Y_i$, we get $X=(n/m)+(k-1)\sum\limits_{i=1}^{n/m}Y_i$.\\
+Applying the Chernoff bounds to $Y=\sum\limits_{i=1}^{n/m}Y_i$, we get $\Pr(|Y-\textbf{E}[Y]|\geq \delta\textbf{E}[Y])\leq 2e^{-\textbf{E}[Y]\delta^2/3}$.
+Since $\textbf{E}[[Y]=(n/m)(1-p)$, we can bound $X$ as:\\
+$\Pr(|X-(n/m)(1+(1-p)(k-1))|\geq\delta (n/m)(1-p)(k-1))\leq2e^{-\frac{n}{m}(1-p)\frac{\delta^2}{3}}$.
+Using the union bound, we bound the total time $T$ to $\Pr(|T-(n/m)(1+(1-p)(k-1))|\geq\delta (n/m)(1-p)(k-1))\leq2me^{-\frac{n}{m}(1-p)\frac{\delta^2}{3}}$.
+We can take $\delta=\sqrt{\frac{3\ln(2m/\epsilon)}{(n/m)(1-p)}}$ to derive the bound with probability of at least $1-\epsilon$.
+\section*{4.18}
 
 \end{document}
