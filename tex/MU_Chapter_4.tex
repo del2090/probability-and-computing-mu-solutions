@@ -119,5 +119,16 @@ Considering that $\frac{\partial}{\partial x}(F(x,p)-2(x-p)^2)=0$ yields $x=p$ a
 (d) Take $Y_i=1-X_i$, and let $Y=n-X$. Then, $\Pr(X\leq (p-\epsilon)n)=\Pr(Y\geq((1-p)+\epsilon)n)\leq e^{-2n\epsilon^2}$ holds by (c).
 Combined with (c), we get $\Pr(|X-pn|\geq \epsilon n)=\Pr(X\leq(p-\epsilon)n)+\Pr(X\geq(p+\epsilon)n)\leq 2e^{-2n\epsilon^2}$.
 \section*{4.14}
+We first bound the moment generating function of $X$ to $\textbf{E}[e^{tX}]=\prod\limits_{i=1}^n(1-p_i+e^{ta_i}p_i)=\prod\limits_{i=1}^n(1+p_i(e^{ta_i}-1))\leq\prod\limits_{i=1}^n\exp(p_i(e^{ta_i}-1))$.
+Since $0 \leq a_i \leq 1$, $\prod\limits_{i=1}^n\exp(p_i(e^{ta_i}-1))\leq\prod\limits_{i=1}^n\exp(p_i(e^t-1))=\exp(\sum\limits_{i=1}^np_i(e^t-1))=\exp(\mu(e^t-1))$.
+Following the proof of Theorem 4.4 in the textbook, we get $\Pr(X\geq (1+\delta)\mu)=\Pr(e^{tX}\geq e^{t(1+\delta)\mu})\leq \frac{\exp((e^t-1)\mu)}{\exp(t(1+\delta)\mu)}$ for $t>0$.
+Now take $t=\ln(1+\delta)$, and we show the desired Chernoff bound.\\
+Similarly, $\Pr(X\leq (1-\delta)\mu)=\Pr(e^{tX}\geq e^{t(1-\delta)\mu})\leq\frac{\exp((e^t-1)\mu)}{\exp(t(1-\delta)\mu)}$ for $t<0$.
+Now for $0<\delta<1$, take $t=\ln(1-\delta)$, and we can show that $\Pr(X\leq (1-\delta)\mu)\leq\left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^\mu$.
+\section*{4.15}
+Note that $|(1-p_i)-(-p_i)|=1$, and $\textbf{E}[X_i]=0$ for all $i$.
+Applying the Hoeffding bound to $X$, we get $\Pr(|\frac{1}{n}\sum\limits_{i=1}^nX_i | > \epsilon)=\Pr(|X|>n\epsilon)\leq2e^{-2n\epsilon^2}$.
+Now take $\epsilon=\frac{a}{n}$ to get $\Pr(|X|>a)\leq 2e^{-2a^2/n}$.
+\section*{4.16}
 
 \end{document}
