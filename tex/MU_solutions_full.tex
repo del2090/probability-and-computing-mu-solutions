@@ -557,5 +557,12 @@ As $(1+1/n)^n$ increases, we find the smallest $n$ to reach the threshold.\\
 $(1+1/n)^n$ first reaches $0.99e$ at $n=50$, and $0.999999e$ at $n=499982$.\\
 Since $(1-1/n)^n$ also increases, we solve in a similar way. $(1-1/n)^n$ first reaches $0.99/e$ at $n=51$ and $0.999999/e$ at $n=499991$.
 \subsection{}
+Recall the formula used in the birthday paradox: If there are $N$ possibilities, then we solve for the smallest $n$ that satisfies
+$\prod\limits_{i=1}^{n-1}(1-\frac{i}{N})\approx\prod\limits_{i=1}^{n-1}e^{-i/n}=e^{-(n-1)n/2N}<1/2$.
+Note that we omitted the final approximation to derive exact numerical answers.\\
+Regardless of whether the number of Social Security number digits is $9$ or $13$, using the last four digits gives $N=10000$ and this gives $n=119$.\\
+In the case where the number of digits is $9$ ($N=10^9$), we get $n=37234$.\\
+In the case where the number of digits is $13$ ($N=10^{13}$), we get $n=3723298$.
+\subsection{}
 
 \end{document}
