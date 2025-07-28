@@ -130,6 +130,9 @@ Note that $|(1-p_i)-(-p_i)|=1$, and $\textbf{E}[X_i]=0$ for all $i$.
 Applying the Hoeffding bound to $X$, we get $\Pr(|\frac{1}{n}\sum\limits_{i=1}^nX_i | > \epsilon)=\Pr(|X|>n\epsilon)\leq2e^{-2n\epsilon^2}$.
 Now take $\epsilon=\frac{a}{n}$ to get $\Pr(|X|>a)\leq 2e^{-2a^2/n}$.
 \section*{4.16}
+Let $Y_i=a_i(X_i-p_i)$. Then we observe that $\Pr(-a_ip_i \leq Y_i \leq a_i(1-p_i))=1$ and $\textbf{E}[Y_i]=0$.
+Now applying the Hoeffding bound to $\sum\limits_{i=1}^nY_i$ as:\\
+$\Pr(|\sum\limits_{i=1}^nY_i|\geq\delta\mu)\leq 2e^{-2n(\frac{\delta\mu}{n})^2\frac{1}{\max a_i^2}}\leq2e^{-2\delta^2\mu^2/n}$.
 \section*{4.17}
 Let the total time (in steps) of a single processor be $X=\sum\limits_{i=1}^{n/m}X_i$, where $X_i$ is the number of steps for the $i$th job of the processor.
 Since $\textbf{E}[X_i]=p+(1-p)k$, we take $Y_i$ as $X_i=1+(k-1)Y_i$ so that $Y_i\sim Bernoulli(1-p)$. With $Y_i$, we get $X=(n/m)+(k-1)\sum\limits_{i=1}^{n/m}Y_i$.\\
