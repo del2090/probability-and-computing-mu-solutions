@@ -137,7 +137,7 @@ $\Pr(|\sum\limits_{i=1}^nY_i|\geq\delta\mu)\leq 2e^{-2n(\frac{\delta\mu}{n})^2\f
 Let the total time (in steps) of a single processor be $X=\sum\limits_{i=1}^{n/m}X_i$, where $X_i$ is the number of steps for the $i$th job of the processor.
 Since $\textbf{E}[X_i]=p+(1-p)k$, we take $Y_i$ as $X_i=1+(k-1)Y_i$ so that $Y_i\sim Bernoulli(1-p)$. With $Y_i$, we get $X=(n/m)+(k-1)\sum\limits_{i=1}^{n/m}Y_i$.\\
 Applying the Chernoff bounds to $Y=\sum\limits_{i=1}^{n/m}Y_i$, we get $\Pr(|Y-\textbf{E}[Y]|\geq \delta\textbf{E}[Y])\leq 2e^{-\textbf{E}[Y]\delta^2/3}$.
-Since $\textbf{E}[[Y]=(n/m)(1-p)$, we can bound $X$ as:\\
+Since $\textbf{E}[Y]=(n/m)(1-p)$, we can bound $X$ as:\\
 $\Pr(|X-(n/m)(1+(1-p)(k-1))|\geq\delta (n/m)(1-p)(k-1))\leq2e^{-\frac{n}{m}(1-p)\frac{\delta^2}{3}}$.
 Using the union bound, we bound the total time $T$ to $\Pr(|T-(n/m)(1+(1-p)(k-1))|\geq\delta (n/m)(1-p)(k-1))\leq2me^{-\frac{n}{m}(1-p)\frac{\delta^2}{3}}$.
 We can take $\delta=\sqrt{\frac{3\ln(2m/\epsilon)}{(n/m)(1-p)}}$ to derive the bound with probability of at least $1-\epsilon$.
