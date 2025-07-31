@@ -590,5 +590,14 @@ Let $X\sim Poisson(\lambda)$. Then $M_X(t)=\textbf{E}[e^{tX}]=e^{\lambda(e^t-1)}
 By computing the second derivative of $M_X(t)$ with respect to $t$ and plugging $t=0$ in, we get $\textbf{E}[X^2]=\lambda+\lambda^2$.
 Thus, $\textbf{Var}[X]=\lambda$ follows.
 \subsection{}
+We first show that $Y\sim Poisson(\mu p)$.\\
+$\Pr(Y=k)=\sum\limits_{i=k}^\infty\Pr(X=i)\binom{i}{k}p^k(1-p)^{i-k}=\sum\limits_{i=k}^\infty\frac{e^{-\mu}\mu^i}{i!}\frac{i!}{k!(i-k)!}p^k(1-p)^{i-k}$\\
+$=\frac{e^{-\mu}(p\mu)^k}{k!}\sum\limits_{i=k}^\infty\frac{(\mu(1-p))^{i-k}}{(i-k)!}=\frac{e^{-\mu}(p\mu)^k}{k!}e^{\mu(1-p)}=\frac{e^{-\mu p}(\mu p)^k}{k!}$.\\
+We can also similarly show that $Z\sim Poisson(\mu(1-p))$.\\
+Now we show that $\Pr(Y=i,Z=j)=\Pr(Y=i)\Pr(Z=j)$. Note that $X=Y+Z$ by definition.
+This allows us to write $\Pr(Y=i,Z=j)$ as $\Pr(Y=i,X=i+j)=\Pr(X=i+j)\binom{i+j}{i}p^{i}(1-p)^{j}=\frac{e^{-\mu}\mu^{i+j}}{i!j!}p^i(1-p)^j$.\\
+Since $\Pr(Y=i)\Pr(Z=j)=\frac{e^{-p\mu}(p\mu)^i}{i!}\frac{e^{-(1-p)\mu}((1-p)\mu)^j}{j!}=\frac{e^{-\mu}\mu^{i+j}p^i(1-p)^j}{i!j!}=\Pr(Y=i,X=i+j)$,
+$Y \perp\!\!\!\perp Z$. $\blacksquare$
+\subsection{}
 
 \end{document}
