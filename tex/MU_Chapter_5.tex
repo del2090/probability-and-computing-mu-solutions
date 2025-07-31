@@ -23,5 +23,16 @@ Regardless of whether the number of Social Security number digits is $9$ or $13$
 In the case where the number of digits is $9$ ($N=10^9$), we get $n=37234$.\\
 In the case where the number of digits is $13$ ($N=10^{13}$), we get $n=3723298$.
 \section*{5.3}
+Let the number of balls thrown be $m$. Then the desired probability is $\prod\limits_{i=0}^{m-1}(1-\frac{i}{n})$.\\
+We first determine $c_1$.
+$m=c_1\sqrt{n}$ should satisfy $\prod\limits_{i=0}^{m-1}(1-\frac{i}{n}) \leq \prod\limits_{i=0}^{m-1}e^{-i/n}=e^{-(m-1)m/2n}\leq e^{-1}$.
+Since $(m-1)m=c_1^2n-c_1\sqrt{n}\geq 2n$, $(c_1^2-2)\sqrt{n}\geq c_1$.
+Therefore, we choose $c_1$ that is greater than or equal to $\frac{1}{2}\left(\frac{1}{\sqrt{n}}+\sqrt{\frac{1}{n}+8}\right)$.\\
+Now we determine $c_2$. To use the given hint, assume that $2m < n$.\\
+$\prod\limits_{i=0}^{m-1}(1-\frac{i}{n})\geq\prod\limits_{i=0}^{m-1}\exp(-\frac{i}{n}-\frac{i^2}{n^2})=\exp(-\frac{m(m-1)}{2n}-\frac{(m-1)m(2m-1)}{6n^2})$\\
+$=\exp(-\frac{m(m-1)}{2n}(1+\frac{2m-1}{3n}))\geq\exp(-\frac{m^2}{2n}(1+\frac{2m}{3n}))\geq \frac{1}{2}$ should be satisfied for $m=c_2\sqrt{n}$.
+This is equivalent to satisfying $\frac{c_2^2}{2}(1+\frac{2c_2}{3\sqrt{n}})\leq \ln 2$.\\
+Since $n$ is sufficiently large, choosing $c_2 = \sqrt{2\ln2 - \frac{1}{\ln n}}$ yields the desired result.
+\section*{5.4}
 
 \end{document}
