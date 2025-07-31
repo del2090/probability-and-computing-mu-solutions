@@ -575,5 +575,20 @@ $=\exp(-\frac{m(m-1)}{2n}(1+\frac{2m-1}{3n}))\geq\exp(-\frac{m^2}{2n}(1+\frac{2m
 This is equivalent to satisfying $\frac{c_2^2}{2}(1+\frac{2c_2}{3\sqrt{n}})\leq \ln 2$.\\
 Since $n$ is sufficiently large, choosing $c_2 = \sqrt{2\ln2 - \frac{1}{\ln n}}$ yields the desired result.
 \subsection{}
+Let event $A$ indicate that there exist two or more people who share a birthday, and event $B$ indicate that exactly two people share a birthday.
+Then our desired probability would be $\Pr(A-B)=\Pr(A)-\Pr(B)$ since $B\subset A$.\\
+We first determine $\Pr(A)$, which is easy: $\Pr(A)=1-\prod\limits_{i=1}^{100}\frac{366-i}{365}$.\\
+We now determine $\Pr(B)$. If there are $i$ shared birthdays in which each day is shared by exactly two people, then the number of possible permutations would be the product of the following terms:\\
+$\binom{365}{i}$ ways to choose $i$ shared days, 
+$\binom{100}{2i}$ ways to choose $2i$ people to share birthdays,
+$\prod\limits_{j=1}^i\binom{2j}{2}$ ways to distribute $i$ birthdays to $2i$ people
+and $\prod\limits_{j=1}^{100-2i}(366-i-j)$ ways to distribute unique birthdays to the rest.\\
+Thus, $\Pr(B)=\sum\limits_{i=0}^{50}\frac{365!100!}{i!(100-2i)!(265+i)!2^i}\times\frac{1}{365^{100}}$.\\
+Therefore, we can determine our desired probability $\Pr(A-B)=\Pr(A)-\Pr(B)$.
+\subsection{}
+Let $X\sim Poisson(\lambda)$. Then $M_X(t)=\textbf{E}[e^{tX}]=e^{\lambda(e^t-1)}$ holds.
+By computing the second derivative of $M_X(t)$ with respect to $t$ and plugging $t=0$ in, we get $\textbf{E}[X^2]=\lambda+\lambda^2$.
+Thus, $\textbf{Var}[X]=\lambda$ follows.
+\subsection{}
 
 \end{document}
