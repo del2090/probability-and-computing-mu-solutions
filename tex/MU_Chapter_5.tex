@@ -58,5 +58,14 @@ This allows us to write $\Pr(Y=i,Z=j)$ as $\Pr(Y=i,X=i+j)=\Pr(X=i+j)\binom{i+j}{
 Since $\Pr(Y=i)\Pr(Z=j)=\frac{e^{-p\mu}(p\mu)^i}{i!}\frac{e^{-(1-p)\mu}((1-p)\mu)^j}{j!}=\frac{e^{-\mu}\mu^{i+j}p^i(1-p)^j}{i!j!}=\Pr(Y=i,X=i+j)$,
 $Y \perp\!\!\!\perp Z$. $\blacksquare$
 \section*{5.7}
+We first prove that $\ln(1+x)\leq x$, which is equivalent to $1+x\leq e^x$.\\
+Since $\ln(1+x)-x= -\frac{x^2}{2}+\frac{x^3}{3}-\cdots$, this can be seen as an alternating series as $\frac{x^n}{n}$ is monotonically decreasing in $|x| \leq 1$.
+We can apply rearrangements to the alternating series as $\ln(1+x)-x=-\sum\limits_{n=1}^\infty\left(\frac{x^{2n}}{2n}-\frac{x^{2n+1}}{2n+1}\right)$,
+since the Taylor expansion of $\ln(1+x)$ is absolutely convergent (to $e^x-1$).
+The rearrangement gives $\ln(1+x)-x \leq 0$, which is the desired result.\\
+We now prove $x + \ln(1-x^2) \leq \ln(1+x)$, which is equivalent to $e^x(1-x^2) \leq 1+x$.\\
+Since $\ln(1-x^2)=\ln(1+x)+\ln(1-x)$, $x + \ln(1-x^2) \leq \ln(1+x)$ is reduced to $\ln(1-x)\leq -x$. 
+At $|x|\leq 1$, this is equivalent to $\ln(1+x)\leq x$, which we have previously proved. $\blacksquare$
+\section*{5.8}
 
 \end{document}
