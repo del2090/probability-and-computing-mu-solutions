@@ -677,5 +677,17 @@ $\geq \textbf{E}[f(X_1^{(m)},...,X_n^{(m)})]\times \frac{1}{2}$.
 Thus, Theorem 5.10 is proved for the monotonically increasing case.\\
 If one can derive a formal proof on the statement of exercise 5.14.(c), Theorem 5.10 can also be proved for the monotonically decreasing case.
 \subsection{}
+(a) Expectations are computed as $\textbf{E}[X_1X_2\cdots X_k]=\Pr(X_1X_2\cdots X_k=1)=(1-\frac{k}{n})^n$ 
+and $\textbf{E}[Y_1Y_2\cdots Y_k]=\Pr(Y_1Y_2\cdots Y_k=1)=p^k=(1-\frac{1}{n})^{k\times n}$.\\
+Since $1-\frac{k}{n}\leq (1-\frac{1}{n})^k$ by the Bernoulli inequality, $\textbf{E}[X_1X_2\cdots X_k]\leq \textbf{E}[Y_1Y_2\cdots Y_k]$.\\
+(b) $\textbf{E}[e^{tX}]=\textbf{E}\left[\sum\limits_{k=0}^\infty\frac{(tX)^k}{k!}\right]=\sum\limits_{k=0}^\infty\textbf{E}[\frac{(tX)^k}{k!}]$
+holds since $\mathbb{N}$ is countable, and the same applies to $\textbf{E}[e^{tY}]$.
+Therefore, we show $\textbf{E}[X^k]\leq\textbf{E}[Y^k]$ for $\forall k\in \mathbb{N}$.\\
+$\textbf{E}[X^k]=\textbf{E}[(X_1+X_2+\cdots+X_n)^k]$ holds, and $(X_1+X_2+\cdots+X_n)^k$ is the sum of products where each product is in the form of $X_{i_1}X_{i_2}\cdots X_{i_k}$ ($|\{i_1,i_2,...i_k\}|\leq k$).
+Since $X_i$ are indicator variables, $X_i^n=X_i$ holds for $\forall n \in \mathbb{N}$, so the repeats can be ignored from the product.\\
+Suppose that $|\{i_1,i_2,...i_k\}|=m$. Then the result of 5.16.(a) applies with $k=m$. Thus, $\textbf{E}[X^k]\leq\textbf{E}[Y^k]$ holds and, therefore, $\textbf{E}[e^{tX}]\leq\textbf{E}[e^{tY}]$ holds.\\
+(c) $\Pr(X\geq(1+\delta)\mu)\leq\frac{\textbf{E}[e^{tX}]}{e^{t(1+\delta)\mu}}\leq\frac{\textbf{E}[e^{tY}]}{e^{t(1+\delta)\mu}}$ holds. 
+Since $\textbf{E}[e^{tY}]=(1-p+pe^t)^n$, we can choose $t=\ln(1+\delta)$ to derive $\Pr(X\geq(1+\delta)\mu)\leq\left(\frac{e^\delta}{(1+\delta)^{1+\delta}}\right)^\mu$.
+\subsection{}
 
 \end{document}
