@@ -122,5 +122,19 @@ Since $\mu^2 > \mu^2 - i^2$, $\Pr(Z=\mu+h)-\Pr(Z=\mu-h-1)\geq 0$ holds and the c
 shows that $2\Pr(Z\geq\mu)\geq1$, proving the claim.\\
 (c) Numerical validation can show that $\Pr(Z\geq \mu)\leq 1/2$ for all integers $\mu$ from $1$ to $10$.
 \section*{5.15}
+(a) $\textbf{E}[f(Y_1^{(m)},...,Y_n^{(m)})]=\sum\limits_{k=0}^\infty\textbf{E}[f(X_1^{(k)},...,X_n^{(k)})]\Pr(\sum\limits_{i=1}^nY_i^{(m)}=k)$
+holds (recall the proof of Theorem 5.7).\\
+If $\mu(m)=\textbf{E}[f(X_1^{(m)},...,X_n^{(m)})]$ is monotonically increasing in $m$, then we have $\mu(k)\geq\mu(m)$ for $k\geq m$ for some $m$.
+Thus, $\textbf{E}[f(Y_1^{(m)},...,Y_n^{(m)})]=\sum\limits_{k<m}\mu(k)\Pr(\sum\limits_{i=1}^n Y_i^{(m)}=k)+\sum\limits_{k\geq m}\mu(k)\Pr(\sum\limits_{i=1}^n Y_i^{(m)}=k)$ ($f\geq 0$)\\
+$\geq \sum\limits_{k\geq m}\mu(m)\Pr(\sum\limits_{i=1}^n Y_i^{(m)}=k)=\textbf{E}[f(X_1^{(m)},...,X_n^{(m)})]\Pr(\sum Y_i^{(m)}\geq m)$.\\
+Similarly, if $\mu(m)$ is monotonically decreasing in $m$, then we have $\mu(k)\geq\mu(m)$ for $k\leq m$ for some $m$. Thus,\\
+$\textbf{E}[f(Y_1^{(m)},...,Y_n^{(m)})]=\sum\limits_{k\leq m}\mu(k)\Pr(\sum\limits_{i=1}^n Y_i^{(m)}=k)+\sum\limits_{k> m}\mu(k)\Pr(\sum\limits_{i=1}^n Y_i^{(m)}=k)$\\
+$\geq \sum\limits_{k\leq m}\mu(m)\Pr(\sum\limits_{i=1}^n Y_i^{(m)}=k)=\textbf{E}[f(X_1^{(m)},...,X_n^{(m)})]\Pr(\sum Y_i^{(m)}\leq m)$.\\
+(b) Since the sum of independent Poisson random variables is also a Poisson random variable, $\sum Y_i^{(m)}\sim Poisson(m)$.
+Using the result of exercise 5.14.(b) and 5.15.(a), $\textbf{E}[f(Y_1^{(m)},...,Y_n^{(m)})]\geq \textbf{E}[f(X_1^{(m)},...,X_n^{(m)})]\Pr(\sum Y_i^{(m)}\geq m)$\\
+$\geq \textbf{E}[f(X_1^{(m)},...,X_n^{(m)})]\times \frac{1}{2}$.
+Thus, Theorem 5.10 is proved for the monotonically increasing case.\\
+If one can derive a formal proof on the statement of exercise 5.14.(c), Theorem 5.10 can also be proved for the monotonically decreasing case.
+\section*{5.16}
 
 \end{document}
