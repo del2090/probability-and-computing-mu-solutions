@@ -656,5 +656,12 @@ Therefore, we bound the probability that the maximum load is greater than $6M=6\
 Thus, we can derive the upper bound as $\Pr(\sum\limits_{i=0}^{n-1}\textbf{1}_{X_i\geq6M}>0)\leq\Pr(\sum\limits_{i=0}^{\log_2 n-1}\textbf{1}_{Y_i\geq 3M}>0)\leq \frac{1}{\log_2 n}$.
 Thus, the maximum load is less than $6\ln \log_2 n / \ln\ln \log_2 n = O(\log\log n/\log\log\log n)$ with probability $1-\frac{1}{\log_2 n}$ which approaches $1$ as $n\rightarrow \infty$.
 \subsection{}
+(a) $\Pr(Z=\mu+h)-\Pr(Z=\mu-h-1)=\frac{e^{-\mu}\mu^{\mu+h}}{(\mu+h)!}-\frac{e^{-\mu}\mu^{\mu-h-1}}{(\mu-h-1)!}$
+$=\frac{\mu^{\mu-h}}{(\mu+h)!}(\mu^{2h}-\sum\limits_{i=1}^h(\mu^2-i^2))$.
+Since $\mu^2 > \mu^2 - i^2$, $\Pr(Z=\mu+h)-\Pr(Z=\mu-h-1)\geq 0$ holds and the claim is proved.\\
+(b) $\Pr(Z\geq \mu)\geq \sum\limits_{h=0}^{\mu-1}\Pr(Z=\mu+h)\geq\sum\limits_{h=0}^{\mu-1}\Pr(Z=\mu-h-1)=\Pr(Z<\mu)=1-\Pr(Z\geq\mu)$
+shows that $2\Pr(Z\geq\mu)\geq1$, proving the claim.\\
+(c) Numerical validation can show that $\Pr(Z\geq \mu)\leq 1/2$ for all integers $\mu$ from $1$ to $10$.
+\subsection{}
 
 \end{document}
