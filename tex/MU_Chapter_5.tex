@@ -106,5 +106,14 @@ Since $1-(1-\frac{1}{n})^n \leq \frac{3}{4}$ at $n\geq 2$, we calculate the mini
 Taking log on both sides gives $\ln n +2^{k^*-1} \ln\frac{3}{4}\leq 0$, which is equivalent to $2^{k^*-1}\geq \frac{\ln n}{\ln \frac{4}{3}}$.
 Therefore, we get $k^*-1\geq \ln \frac{\ln n}{\ln \frac{4}{3}}$, which shows that $k^*=O(\log\log n)$.
 \section*{5.13}
+Let the load of bin $i$ be $X_i$, and let $Y_k=X_{kn/\log_2n}$ where $k\in\mathbb{N}_0$.
+Then for all $i$, there exists $k\in \mathbb{N}$ such that $kn/\log_2 n \leq i \leq (k+1)n/\log_2 n$.\\
+When a ball is thrown into the bin $i$, only one of the two bins (bin $kn/\log_2 n$ and bin $(k+1)n/\log_2 n$) must be chosen together. This means that $X_i \leq Y_k+Y_{k+1}$.\\
+Since only one of the bins in $S=\{i|i=kn/\log_2 n\}$ gets a ball within a player's round, we can see $Y_k$ as each bin in the model of balls and bins with $\log_2 n$ bins and $\log_2 n$ balls.\\
+Recall that the probability that the maximum load is more than $3\ln n/\ln\ln n$ is at most $1/n$ in the model of $n$ balls and $n$ bins (Lemma 5.1).
+Therefore, we bound the probability that the maximum load is greater than $6M=6\ln \log_2 n / \ln\ln \log_2 n$, considering $X_i \leq Y_k + Y_{k+1}$.
+Thus, we can derive the upper bound as $\Pr(\sum\limits_{i=0}^{n-1}\textbf{1}_{X_i\geq6M}>0)\leq\Pr(\sum\limits_{i=0}^{\log_2 n-1}\textbf{1}_{Y_i\geq 3M}>0)\leq \frac{1}{\log_2 n}$.
+Thus, the maximum load is less than $6\ln \log_2 n / \ln\ln \log_2 n = O(\log\log n/\log\log\log n)$ with probability $1-\frac{1}{\log_2 n}$ which approaches $1$ as $n\rightarrow \infty$.
+\section*{5.14}
 
 \end{document}
