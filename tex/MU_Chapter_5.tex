@@ -67,5 +67,32 @@ We now prove $x + \ln(1-x^2) \leq \ln(1+x)$, which is equivalent to $e^x(1-x^2) 
 Since $\ln(1-x^2)=\ln(1+x)+\ln(1-x)$, $x + \ln(1-x^2) \leq \ln(1+x)$ is reduced to $\ln(1-x)\leq -x$. 
 At $|x|\leq 1$, this is equivalent to $\ln(1+x)\leq x$, which we have previously proved. $\blacksquare$
 \section*{5.8}
+(a) Since the ball is equally likely to fall in one of the three bins, the desired probability is $1/3$.\\
+(b) Since the bin $2$ did not receive balls, we can simply think of this as throwing balls $n$ into $n-1$ bins. The conditional expectation would be $n/(n-1)$.\\
+(c) Note that the probability that bin $1$ receives more balls than bin $2$ is the same as that of bin $2$ receiving more balls than bin $1$. Thus, we first compute the probability that two bins receive the same number of balls, which is\\
+$P=\sum\limits_{k=0}^{\lfloor n/2\rfloor}\binom{n}{2k}\binom{2k}{k}(\frac{1}{n})^{2k}(1-\frac{2}{n})^{n-2k}$.
+The desired probability would be $(1-P)/2$.
+\section*{5.9}
+In the given condition, the expected number of elements in a single bucket is at most $a$. Since $a=O(1)$, sorting all buckets can still be done in linear time.
+\section*{5.10}
+(a) By the Poisson approximation, the probability $p$ is bounded as $p \leq e\sqrt{n}(\frac{1}{e})^n$.\\
+(b) $\frac{n!}{n^n}$.\\
+(c) Since $\Pr(Z=n)=\frac{e^{-n}n^n}{n!}$ when $Z\sim Poisson(n)$, $\frac{n!}{n^n}\times\frac{e^{-n}n^n}{n!}=e^{-n}$ shows the claim.
+Theorem $5.6$ states that the distribution $(Y_1,...,Y_n)$ constrained on $\sum\limits_{i=1}^n Y_i=n$ is equivalent to the balls and bins model.
+Note that each $Y_i$ follows $Poisson(1)$ and each $X_i$ denotes the load of the $i$th bin in the balls and bins model.
+Then using theorem $5.6$, $(1/e)^n/(\frac{e^{-n}n^n}{n!})=\frac{\Pr(\forall i, Y_i=1)}{\Pr(\sum_iY_i=n)}=\Pr(\forall i,Y_i=1 | \sum_i Y_i=n)=\Pr(\forall i, X_i=1)=\frac{n!}{n^n}$.
+\section*{5.11}
+Let $X_i$ be the indicator variables that are $1$ if there is a $k$-gap starting at $i$.\\
+Let $X=\sum\limits_{i=0}^{n-k}X_i$.\\
+(a) The expected number of $k$-gaps would be $\sum\limits_{i=0}^{n-k}\textbf{E}[X_i]=(n-k+1)(1-\frac{k}{n})^m$.\\
+(b) First, we assume that the bin loads follow the Poisson distribution to derive the Poisson-approximated Chernoff bound.
+We divide $\{X_i\}$ into $k$ subsets, so that all indicator variables in the same subset are independent.
+First, we derive the Chernoff bound for $Y_0=\sum\limits_{i\geq0}X_{ik}$ where $0<\delta<1$.\\
+$\Pr(Y_0\geq(1+\delta)\textbf{E}[Y_0])\leq\exp(-\frac{1}{3}\frac{\textbf{E}[X]}{k}\delta^2)$, and
+$\Pr(Y_0\leq(1-\delta)\textbf{E}[Y_0])\leq\exp(-\frac{1}{2}\frac{\textbf{E}[X]}{k}\delta^2)$ holds.
+Therefore, $\Pr(|Y_0-\textbf{E}[Y_0]|\geq\delta\textbf{E}[Y_0])\leq2\exp(-\frac{1}{3}\frac{\textbf{E}[X]}{k}\delta^2)$.\\
+With the union bound for all $Y_i$, we get $\Pr(|X-\textbf{E}[X]|\geq\delta\textbf{E}[X])\leq2k\exp(-\frac{1}{3}\frac{\textbf{E}[X]}{k}\delta^2)$.
+Since we have used the Poisson approximation to compute the Chernoff bound, the computed upper bound should be multiplied by $e\sqrt{m}$.
+\section*{5.12}
 
 \end{document}
