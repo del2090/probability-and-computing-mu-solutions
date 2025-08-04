@@ -689,5 +689,14 @@ Suppose that $|\{i_1,i_2,...i_k\}|=m$. Then the result of 5.16.(a) applies with 
 (c) $\Pr(X\geq(1+\delta)\mu)\leq\frac{\textbf{E}[e^{tX}]}{e^{t(1+\delta)\mu}}\leq\frac{\textbf{E}[e^{tY}]}{e^{t(1+\delta)\mu}}$ holds. 
 Since $\textbf{E}[e^{tY}]=(1-p+pe^t)^n$, we can choose $t=\ln(1+\delta)$ to derive $\Pr(X\geq(1+\delta)\mu)\leq\left(\frac{e^\delta}{(1+\delta)^{1+\delta}}\right)^\mu$.
 \subsection{}
+(a) Since there are $\binom{n}{5}$ possible $5$-cliques and each $5$-clique has $\binom{5}{2}=10$ edges, the expected number of $5$-cliques is $\binom{n}{5}\times p^{10}$.
+Solving $\binom{n}{5}\times p^{10}=1$ for $p$ gives $p=\binom{n}{5}^{-1/10}$.\\
+(b) Since there are $\frac{1}{2}\binom{n}{6}\binom{6}{3}$ possible $K_{3,3}$ subgraphs and each $K_{3,3}$ subgraph has nine edges,
+the expected number of $K_{3,3}$ subgraphs is $\frac{1}{2}\binom{n}{6}\binom{6}{3}\times p^9$.
+Solving $\frac{1}{2}\binom{n}{6}\binom{6}{3}\times p^9=1$ for $p$ gives $p=\left\{\frac{1}{2}\binom{n}{6}\binom{6}{3}\right\}^{-1/9}$.\\
+(c) Since there are $(n-1)!/2$ possible Hamiltonian cycles and each Hamiltonian cycle has $n$ edges,
+the expected number of Hamiltonian cycles is $\frac{1}{2}(n-1)!\times p^n$.
+Solving $\frac{1}{2}(n-1)!\times p^n=1$ for $p$ gives $p=\left\{\frac{1}{2}(n-1)!\right\}^{-1/n}$.
+\subsection{}
 
 \end{document}
