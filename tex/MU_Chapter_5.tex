@@ -157,5 +157,13 @@ Solving $\frac{1}{2}\binom{n}{6}\binom{6}{3}\times p^9=1$ for $p$ gives $p=\left
 the expected number of Hamiltonian cycles is $\frac{1}{2}(n-1)!\times p^n$.
 Solving $\frac{1}{2}(n-1)!\times p^n=1$ for $p$ gives $p=\left\{\frac{1}{2}(n-1)!\right\}^{-1/n}$.
 \section*{5.18}
+For any nonnegative function $f$, $\textbf{E}[f(G_{n,p})||E|=k]=\textbf{E}[f(G_{n,k})]$ holds.\\
+Thus, $\textbf{E}[f(G_{n,p})]=\sum\limits_{k=0}^M\textbf{E}[f(G_{n,k})]\Pr(|E|=k) \geq \textbf{E}[f(G_{n,N})]\Pr(|E|=N)$ holds ($M=\binom{n}{2}$).
+Now we bound the probability $\Pr(|E|=N)$ for the $G_{n,p}$ model to derive the statement.
+Note that $p=N/M$. Using Stirling's bounds,\\
+$\Pr(|E|=N)=\binom{M}{N}p^N(1-p)^{M-N}=\frac{M!}{(M-N)!N!}(\frac{N}{M})^N(\frac{M-N}{M})^{M-N}\geq \frac{\sqrt{2\pi}}{e^2}\frac{\sqrt{M}}{\sqrt{MN-N^2}}$
+$=\frac{\sqrt{2\pi}}{e^2}\frac{1}{\sqrt{N(1-p)}}\geq\frac{\sqrt{2\pi}}{e^2}\frac{1}{\sqrt{N}}$.
+Thus, we let $f$ be an indicator of an event and prove that every event that happens with a small probability $P$ in the $G_{n,p}$ model also happens with small probability (at most $\frac{e^2}{\sqrt{2\pi}}\sqrt{N}\times P$) in the $G_{n,N}$ model.
+\section*{5.19}
 
 \end{document}
