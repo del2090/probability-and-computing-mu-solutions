@@ -706,5 +706,17 @@ $\Pr(|E|=N)=\binom{M}{N}p^N(1-p)^{M-N}=\frac{M!}{(M-N)!N!}(\frac{N}{M})^N(\frac{
 $=\frac{\sqrt{2\pi}}{e^2}\frac{1}{\sqrt{N(1-p)}}\geq\frac{\sqrt{2\pi}}{e^2}\frac{1}{\sqrt{N}}$.
 Thus, we let $f$ be an indicator of an event and prove that every event that happens with a small probability $P$ in the $G_{n,p}$ model also happens with small probability (at most $\frac{e^2}{\sqrt{2\pi}}\sqrt{N}\times P$) in the $G_{n,N}$ model.
 \subsection{}
+We use the result of exercise 5.18 to use the $G_{n,p}$ model.
+Let $M=\binom{n}{2}$ and $G\sim G_{n,p}$ where $p=\frac{r\ln n}{n}$ ($r>2$).\\
+The probability that $G$ is a disconnected graph containing a disconnected set of size $k < n/2$ is upper bounded by $\binom{n}{k}(1-p)^{k(n-k)}$ (union bound).\\
+We can derive $\binom{n}{k}= \frac{(n-k+1)\cdots (n-1)n}{k!}\leq \frac{n^k}{k!}\leq (\frac{en}{k})^k$, where the last inequality is from $e^k=\sum\limits_{i=0}^\infty \frac{k^i}{i!}>\frac{k^k}{k!}$.
+Using this, $\binom{n}{k}(1-p)^{k(n-k)} \leq(\frac{en}{k})^ke^{-pk(n-k)} \leq (\frac{en}{k})^ke^{-pkn/2}=(\frac{en^{1-r/2}}{k})^k$.\\
+We can then upper-bound the probability that $G$ is a disconnected graph again by the union bound:
+$\sum\limits_{k=1}^{n/2}(\frac{en^{1-r/2}}{k})^k=en^{1-r/2}+\sum\limits_{k=2}^{n/2}(\frac{en^{1-r/2}}{k})^k=O(n^{1-r/2})$.\\
+Since $r>2$, $O(n^{1-r/2})=o(1)$. Thus, $G$ is connected with probability $1-o(1)$.\\
+Now, to use the result of exercise 5.18, let $N=Mp=\frac{r}{2}(n-1)\ln n$.
+Since $N=O(n\log n)$, $r>3$ guarantees that $G_{n,N}$ is disconnected with probability $o(1)$, i. e. connected with probability $1-o(1)$.
+Thus, any $c>3/2$ can be the desired constant.
+\subsection{}
 
 \end{document}
