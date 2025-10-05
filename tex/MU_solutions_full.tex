@@ -718,5 +718,31 @@ Now, to use the result of exercise 5.18, let $N=Mp=\frac{r}{2}(n-1)\ln n$.
 Since $N=O(n\log n)$, $r>3$ guarantees that $G_{n,N}$ is disconnected with probability $o(1)$, i. e. connected with probability $1-o(1)$.
 Thus, any $c>3/2$ can be the desired constant.
 \subsection{}
-
+\newpage
+\section{The Probabilistic Method}
+\subsection{}
+(a) Since all $k$ literals must be false for a clause not to be satisfied, the probability that a clause is satisfied is $1-2^{-k}$.
+As the given SAT instance has $m$ clauses, the expected number of satisfied clauses is $m(1-2^{-k})$.
+By the expectation argument, we know that there is an assignment that satisfies at least $m(1-2^{-k})$ clauses.
+Since counting the number of satisfied clauses in the given assignment can be done in $O(mk)$, we bound the probability $p$ that a random assignment satisfies at least $m(1-2^{-k})$ clauses. Let the number of satisfied clauses be $X$.\\
+Then $m(1-2^{-k})=\textbf{E}[X]=\sum\limits_{i<m(1-2^{-k})}i\Pr(X=i)+\sum\limits_{i \geq m(1-2^{-k})}i\Pr(X=i)$\\
+$\leq \left(m(1-2^{-k})-1\right)(1-p)+mp$, as $X \leq m$.\\
+Thus, $p \geq 1/(m2^{-k}+1)$ holds. This indicates that the expected running time of the algorithm would be $O(mk+m^2k2^{-k})$.\\
+(b) We can process each variable one by one.
+For each variable $x$, compute the conditional expectation of $X$ while leaving all unset variables as random, for both $x=True$ or $x=False$.
+Then take $x$ as the value that gives a larger conditional expectation, breaking ties arbitrarily.
+Since the initial expectation is $m(1-2^{-k})$, the assignment should satisfy at least $m(1-2^{-k})$ as the conditional expectation never decreases.
+\subsection{}
+(a) Consider randomly assigning a color to each edge, so that each $K_4$ is monochromatic with a probability of $2\times2^{-\binom{4}{2}}=2^{-5}$.
+By the linearity of expectations, the expected number of monochromatic $K_4$ would be $\binom{n}{4}2^{-5}$.
+By the expectation argument, there exists a two-coloring of $K_n$ where the number of monochromatic $K_4$ does not exceed $\binom{n}{4}2^{-5}$.\\
+(b) Let $p$ be the probability that a random coloring of $K_n$ has no more than $\binom{n}{4}2^{-5}$ monochromatic $K_4$s.
+Let the number of monochromatic $K_4$ be $X$, and we bound $p$ as $\binom{n}{4}2^{-5}=\textbf{E}[X]=\sum\limits_{i<\binom{n}{4}2^{-5}}i\Pr(X=i)+\sum\limits_{i\geq\binom{n}{4}2^{-5}}i\Pr(X=i)\leq \left(\binom{n}{4}2^{-5}-1\right)p+\binom{n}{4}(1-p)$.
+Thus, $p \geq 1/(1+\frac{31}{32}\binom{n}{4})$ holds.
+This indicates that the expected running time of the algorithm would be $O(n^8)$.\\
+(c) We can color each edge one by one.
+For each edge $e_i$, compute the conditional expectation of $X$ while leaving all unset edge colors as random for both colors.
+Then take the color of $e_i$ as the value that gives a smaller conditional expectation, breaking ties arbitrarily.
+Since the initial expectation is $\binom{n}{4}2^{-5}$, the obtained two-coloring should have no more than $\binom{n}{4}2^{-5}$ monochromatic $K_4$s as the conditional expectation never increases.
+\subsection{}
 \end{document}
