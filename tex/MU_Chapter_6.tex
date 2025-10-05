@@ -28,6 +28,7 @@ Since the initial expectation is $m(1-2^{-k})$, the assignment should satisfy at
 By the linearity of expectations, the expected number of monochromatic $K_4$ would be $\binom{n}{4}2^{-5}$.
 By the expectation argument, there exists a two-coloring of $K_n$ where the number of monochromatic $K_4$ does not exceed $\binom{n}{4}2^{-5}$.\\
 (b) Let $p$ be the probability that a random coloring of $K_n$ has no more than $\binom{n}{4}2^{-5}$ monochromatic $K_4$s.
+Since there are $\binom{n}{4}$ $K_4$s, it will take $O(n^4)$ time to check if the random coloring satisfies the statement.
 Let the number of monochromatic $K_4$ be $X$, and we bound $p$ as $\binom{n}{4}2^{-5}=\textbf{E}[X]=\sum\limits_{i<\binom{n}{4}2^{-5}}i\Pr(X=i)+\sum\limits_{i\geq\binom{n}{4}2^{-5}}i\Pr(X=i)\leq \left(\binom{n}{4}2^{-5}-1\right)p+\binom{n}{4}(1-p)$.
 Thus, $p \geq 1/(1+\frac{31}{32}\binom{n}{4})$ holds.
 This indicates that the expected running time of the algorithm would be $O(n^8)$.\\
