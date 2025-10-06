@@ -35,6 +35,8 @@ This indicates that the expected running time of the algorithm would be $O(n^8)$
 (c) We can color each edge one by one.
 For each edge $e_i$, compute the conditional expectation of $X$ while leaving all unset edge colors as random for both colors.
 Then take the color of $e_i$ as the value that gives a smaller conditional expectation, breaking ties arbitrarily.
+Computing conditional expectations at each step would take $O(n^2)$, as the number of $K_4$ containing a particular edge is $\binom{n-2}{2}$.
+As there are $\binom{n}{2}$ edges in $K_n$, the running time would be $O(n^4)$.
 Since the initial expectation is $\binom{n}{4}2^{-5}$, the obtained two-coloring should have no more than $\binom{n}{4}2^{-5}$ monochromatic $K_4$s as the conditional expectation never increases.
 \section*{6.3}
 
